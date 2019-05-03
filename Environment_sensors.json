@@ -2,16 +2,26 @@
     "Weather": {
         "Temperature" : {
             "sid":"temperature",
-            "frq": "5", //TODO
-            "loc": "", //TODO
-            "pos": "", //TODO
+            "frq": "5", 
+            "loc": "", 
+            "pos": "", 
             "t": "celcious degrees",
             "p": "whatever",
             "u": "C",
-            "r": ["-20","50"], //TODO
+            "r": ["-20","50"],
             "d":"number"
         },
-        "Humidity" : {}
+        "Humidity" : {
+            "sid":"humidity",
+            "frq": "5", 
+            "loc": "?", 
+            "pos": "?", 
+            "t": "grams of water vapor per kilogram of air (g/kg)",
+            "p": "whatever",
+            "u": "gkg",
+            "r": ["0%","100%"],
+            "d": "number"
+        }
     },
     "Distance":{
         "Between objects":{},
