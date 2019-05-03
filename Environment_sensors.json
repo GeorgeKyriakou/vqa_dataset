@@ -28,7 +28,17 @@
         }
     },
     "Distance":{
-        "Between objects":{},
+        "Between objects":{
+            "sid":"distance",
+            "frq": "5", //TODO
+            "loc": "", //TODO
+            "pos": "", //TODO
+            "t": "meters",
+            "p": "whatever",
+            "u": "m",
+            "r": ["0","5000"], //TODO
+            "d":"number"
+        },
         "Travelled (car, public transport, on foot)":{},
         "Gps ":{}
     },
