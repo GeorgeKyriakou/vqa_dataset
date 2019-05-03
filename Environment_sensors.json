@@ -1,0 +1,46 @@
+{
+    "Weather": {
+        "Temperature" : {
+            "sid":"temperature",
+            "frq": "5", //TODO
+            "loc": "", //TODO
+            "pos": "", //TODO
+            "t": "celcious degrees",
+            "p": "whatever",
+            "u": "C",
+            "r": ["-20","50"], //TODO
+            "d":"number"
+        },
+        "Humidity" : {}
+    },
+    "Distance":{
+        "Between objects":{},
+        "Travelled (car, public transport, on foot)":{},
+        "Gps ":{}
+    },
+    "Sound-level":{
+        "People voice":{},
+        "Car sound":{},
+        "Noise level":{}
+    },
+    "Light sensors": {},
+    "Shape of objects": {},
+    "Traffic lights": {},
+    "Speed": {},
+    "Timestamp": {},
+    "Thermal sensors": {},
+    "Smoke": {},
+    "Air-pollution": {},
+    "Water level ": {}
+}
+
+// – sid - sensor ID
+// – frq - maximal sampling frequency 
+// – loc - physical location being sensed 
+// – pos - physical location of the sensor 
+// – out - a tuple ht, p, u, r, di describing the output 
+// – t - the type of physical property/quantity measured in the environment 
+// – p - precision of measurement 
+// – u - unit of measurement 
+// – r - range of values 
+// – d - data type
