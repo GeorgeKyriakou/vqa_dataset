@@ -5,22 +5,26 @@
             "frq": "5", 
             "loc": "", 
             "pos": "", 
-            "t": "celcious degrees",
-            "p": "whatever",
-            "u": "C",
-            "r": ["-20","50"],
-            "d":"number"
+            "out": { 
+                "t": "celcious degrees",
+                "p": "whatever",
+                "u": "C",
+                "r": ["-20","50"],
+                "d":"number"
+            }
         },
         "Humidity" : {
             "sid":"humidity",
             "frq": "5", 
             "loc": "?", 
             "pos": "?", 
-            "t": "grams of water vapor per kilogram of air (g/kg)",
-            "p": "whatever",
-            "u": "gkg",
-            "r": ["0%","100%"],
-            "d": "number"
+            "out":{
+                "t": "grams of water vapor per kilogram of air (g/kg)",
+                "p": "whatever",
+                "u": "gkg",
+                "r": ["0%","100%"],
+                "d": "number"
+            }
         }
     },
     "Distance":{
@@ -29,11 +33,31 @@
         "Gps ":{}
     },
     "Sound-level":{
-        "People voice":{},
-        "Car sound":{},
-        "Noise level":{}
+        "sid":"decibel",
+        "frq": "5", 
+        "loc": "?", 
+        "pos": ["People","Car","Outoodrs"], 
+        "out": {
+            "t": "grams of water vapor per kilogram of air (g/kg)",
+            "p": "whatever",
+            "u": "gkg",
+            "r": ["0%","100%"],
+            "d": "number"
+        }
     },
-    "Light sensors": {},
+    "Light sensors": {
+        "sid":"light_sensor",
+        "frq": "5", 
+        "loc": "?", 
+        "pos": ["Outoodrs"], 
+        "out": {
+            "t": "lux",
+            "p": "whatever",
+            "r": ["0","100000"],
+            "u": "lx",
+            "d": "number"
+        }
+    },
     "Shape of objects": {},
     "Traffic lights": {},
     "Speed": {},
