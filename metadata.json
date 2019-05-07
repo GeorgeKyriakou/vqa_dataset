@@ -1,0 +1,107 @@
+{  
+    "dataset":"EKSYPN_v1",
+    "types": {  
+       "Entity": null, // a sensor
+       "EntitySet": null, //a set of sensors
+       "Integer": null,
+       "Bool":[ true, false ],
+       "Temperature":[ -30.00, 50.00 ],
+       "Wind_speed":[ 0,12 ],
+       "Volume": [0, 100 ],
+       "Light_level": [0, 100000],
+       "Timestamp": null,
+       "Weather": [ "sunny", "rain", "snowey", "cloudy"],
+       "Vehicle_speed": [0,240],
+       "Distance": null,
+       "Quantity": null
+    },
+    "functions":[  
+       {  
+          "name":"scene",
+          "inputs":[ ],
+          "output":"EntitySet",
+          "terminal":false
+       },
+       {  
+          "name":"count",
+          "inputs":[ "EntitySet"],
+          "side_inputs":[ "Quantity"],
+          "output":[ "none","few","many"],
+          "terminal":false
+       },
+       {  
+          "name":"distance",
+          "inputs":["EntitySet"],
+          "side_inputs":["Distance"],
+          "output":[ "near", "far", "very near", "very far"],
+          "terminal":false
+       },
+       {  
+        "name":"sound_level",
+        "inputs":["EntitySet"],
+        "side_inputs":["Volume"],
+        "output":["quiet", "normal", "loud"],
+        "terminal":false
+     },
+       //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Temperature 
+        {  
+          "name":"measure_temperature",
+          "inputs":[ "EntitySet"],
+          "side_inputs":[ "Temperature"],
+          "output":"Integer",
+          "terminal":false
+       },
+       {  
+          "name":"is_equal_temperature",
+          "inputs":[ "EntitySet", "EntitySet"],
+          "side_inputs":[ "Temperature"],
+          "output":"Boolean",
+          "terminal":false
+       },
+       {  
+          "name":"is_lower_temperature",
+          "inputs":[ "EntitySet", "EntitySet"],
+          "side_inputs":[ "Temperature" ],
+          "output":"Boolean",
+          "terminal":false
+       },
+       {  
+          "name":"is_higher_temperature",
+          "inputs":[ "EntitySet", "EntitySet"
+          ],
+          "side_inputs":[ "Temperature"],
+          "output":"Boolean",
+          "terminal":false
+       },
+       //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Weather
+       {  
+          "name":"is_weather_good",
+          "inputs":[ "EntitySet"],
+          "side_inputs":[ "Weather,Temperature","Wind_speed"],
+          "output":"Boolean",
+          "terminal":false
+       },
+       {  
+          "name":"is_weather_bad",
+          "inputs":[ "EntitySet"],
+          "side_inputs":[ "Weather,Temperature","Wind_speed"],
+          "output":"Boolean",
+          "terminal":false
+       },
+       {  
+        "name":"is_a_sunny_day",
+        "inputs":[ "EntitySet"],
+        "side_inputs":[ "Timestamp", "Light_level"],
+        "output":"Boolean",
+        "terminal":false
+     }, // more like this
+        //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Traffic
+        {  
+            "name":"traffic_conditions",
+            "inputs":[ "EntitySet"],
+            "side_inputs":[ "Weather,Temperature","Wind_speed"],
+            "output":["good flow", "bad flow", "jammed"],
+            "terminal":false
+         },
+    ]
+ }
