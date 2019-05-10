@@ -30,13 +30,13 @@
     "Distance":{
         "Between objects":{
             "sid":"distance",
-            "frq": "5", //TODO
-            "loc": "", //TODO
-            "pos": "", //TODO
+            "frq": "5",
+            "loc": "", 
+            "pos": "", 
             "t": "meters",
             "p": "whatever",
             "u": "m",
-            "r": ["0","5000"], //TODO
+            "r": ["0","5000"], 
             "d":"number"
         },
         "Travelled (car, public transport, on foot)":{},
