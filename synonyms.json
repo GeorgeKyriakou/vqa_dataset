@@ -1,0 +1,20 @@
+{
+  "vehicle": ["vehicle", "means of transport"],
+  "car": ["car", "automobiles"],
+  "bike": ["bike", "cycle", "bicycle"],
+  "bus": ["bus", "public transport"],
+  "fire-truck": ["fire-truck", "emergency vehicle"],
+  "calculate": ["more than", "less than", "equal to"],
+  "position": ["above", "behind", "in front of", "right of", "left of"],
+  "temperature": ["temperature", "degrees"],
+  "outside": ["outside", "outdoors"],
+  "trucks": ["trucks", "van"],
+  "people": ["people", "humans"],
+  "explosion": ["explosion", "burst", "blast"],
+  "shout": ["shout", "yell"],
+  "area": ["area", "location", "district"],
+  "less than": ["less than", "bellow"],
+  "nearest": ["nearest", "closest"],
+  "noise level": ["noise level", "volume"],
+  "work": ["work", "function"]
+}

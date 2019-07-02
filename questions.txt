@@ -1,0 +1,75 @@
+
+Questions - Operations
+
+Compare
+1) Is the temperature in the Central Train Station less than the outside temperature? 
+[ temperature, filter_location, filter_temperature, fork, filter_location, filter_temperature, union, compare ]
+
+2) Are there more cars parked at the Shopping Mall than at Malmo Stadium?
+	[ image,  filter_location, filter_cars, count, fork filter_location, filter_cars, count, union, compare]
+
+3) Are there more cars-parked than trucks-parked at Malmo Stadium?
+[ image, filter_location, filter_trucks, filter_parked, filter_location, count, fork filter_car, filte_parked, count, union, compare ]
+
+
+
+Query
+1) What is the majority of vehicles near Malmo Central? Cars, Trucks or bikes...
+[ image, filter_location, filter_cars, count, fork, filter_location, filter_bike, count, union, query]
+
+2) What is the number plate of the car with the higher speed at City Center?
+	[ speed-image,  filter_location, filter_car, filter_speed, filter_plate, query]
+
+3) What is the distance of the nearest fire truck to the on going fire?
+	[ distance-image, filter_fire, filter_location, fork, filter_firetruck, filter_location, union, filter_distance, query] 
+
+
+Existence - Binary (yes/no)
+1) Is there noise pollution(>80db) at Malmo Stadium?
+[ audio, filter_location, filter_volume, exists ]
+
+2) Are there cars parked at Malmo Stadium?
+	[ image, filter_location, filter_vehicle, filter_parked, exists ] 
+
+3) Is someone shouting at Folkets Park?
+	[ audio-image, filter_location, filter_volume, exists]
+
+
+4) Is there a high noise level in Folkets Park area? 
+	[ audio, filter_location, filter_volume, exists]
+
+5) Is there a fire or flood at Malmo Stadium?
+	[ temperature-image, filter_location, filter_fire, fork, filter_location, filter_flood, union, exists]
+
+6) Is there a traffic jam at City Center?
+	[ image, filter_location, filter_trafficJam, exists ]
+
+7) Are the city lights turned on at Folkets Parks?
+	[ image, filter_location, filter_ligtsOn, exists ]
+
+8) Is any building on fire at City Center?
+	[ image, filter_location, filter_building, filter_fire, exists]
+	
+9) In which area of the city there is fire?
+	[ image, filter_fire, filter_location, exists ]
+
+10) Do traffic lights work at Varnhem?
+[image, filter_location, filter_trafficLightsOn, exists]
+
+11) Has there been an explosion at Malmö?
+	[audio-image-temperature, filter_location, filter_explosion, exists]
+
+
+Count
+1) How many cars/trucks are parked at the Shopping Mall?
+	[image, filter_location, filter_trucks, fork, filter_location, filter_car, union, count ]
+
+2) How many people are shouting at Malmo Stadium?
+	[ audio-image, filter_location, filter_people, filter_shout, count ]
+
+3)  How many cars are illegally parked in the City Centre? 
+[image,  filter_location, filter_car, filter_illegal, count ]  
+
+4) How many vehicles are passing the red light or exceeding the speed limit at Malmö University area?
+	[speed-image, filter_location, filter_vehicle, filter_redLight, fork, filter_location, filter_vehicle filter_speedLimit, count ]
+
