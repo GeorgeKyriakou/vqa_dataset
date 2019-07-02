@@ -1,0 +1,14 @@
+Possible combinations can be calculated by the following function:
+
+combinations(n, r) {
+  return factorial(n)/factorial(r) - factorial(n-r)
+}
+
+"n" : number of items
+"r" : number of items being chosen at a time
+
+factorial(n) {
+  return (n != 1) ? n * factorial(n - 1) : 1;
+}
+
+

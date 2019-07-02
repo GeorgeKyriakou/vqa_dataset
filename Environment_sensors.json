@@ -1,90 +1,79 @@
 {
-    "Weather": {
-        "Temperature" : {
-            "sid":"temperature",
-            "frq": "5", 
-            "loc": "", 
-            "pos": "", 
-            "out": { 
-                "t": "celcious degrees",
-                "p": "whatever",
-                "u": "C",
-                "r": ["-20","50"],
-                "d":"number"
-            }
-        },
-        "Humidity" : {
-            "sid":"humidity",
-            "frq": "5", 
-            "loc": "?", 
-            "pos": "?", 
-            "out":{
-                "t": "grams of water vapor per kilogram of air (g/kg)",
-                "p": "whatever",
-                "u": "gkg",
-                "r": ["0%","100%"],
-                "d": "number"
-            }
-        }
+  "Weather": {
+    "Temperature": {
+      "sid": "temperature",
+      "frq": "5",
+      "loc": "",
+      "pos": "",
+      "out": {
+        "t": "celcious degrees",
+        "p": "whatever",
+        "u": "C",
+        "r": ["-20", "50"],
+        "d": "number"
+      }
     },
-    "Distance":{
-        "Between objects":{
-            "sid":"distance",
-            "frq": "5", //TODO
-            "loc": "", //TODO
-            "pos": "", //TODO
-            "t": "meters",
-            "p": "whatever",
-            "u": "m",
-            "r": ["0","5000"], //TODO
-            "d":"number"
-        },
-        "Travelled (car, public transport, on foot)":{},
-        "Gps ":{}
+    "Humidity": {
+      "sid": "humidity",
+      "frq": "5",
+      "loc": "?",
+      "pos": "?",
+      "out": {
+        "t": "grams of water vapor per kilogram of air (g/kg)",
+        "p": "whatever",
+        "u": "gkg",
+        "r": ["0%", "100%"],
+        "d": "number"
+      }
+    }
+  },
+  "Distance": {
+    "Between objects": {
+      "sid": "distance",
+      "frq": "5",
+      "loc": "",
+      "pos": "",
+      "t": "meters",
+      "p": "whatever",
+      "u": "m",
+      "r": ["0", "5000"],
+      "d": "number"
     },
-    "Sound-level":{
-        "sid":"decibel",
-        "frq": "5", 
-        "loc": "?", 
-        "pos": ["People","Car","Outoodrs"], 
-        "out": {
-            "t": "grams of water vapor per kilogram of air (g/kg)",
-            "p": "whatever",
-            "u": "gkg",
-            "r": ["0%","100%"],
-            "d": "number"
-        }
-    },
-    "Light sensors": {
-        "sid":"light_sensor",
-        "frq": "5", 
-        "loc": "?", 
-        "pos": ["Outoodrs"], 
-        "out": {
-            "t": "lux",
-            "p": "whatever",
-            "r": ["0","100000"],
-            "u": "lx",
-            "d": "number"
-        }
-    },
-    "Shape of objects": {},
-    "Traffic lights": {},
-    "Speed": {},
-    "Timestamp": {},
-    "Thermal sensors": {},
-    "Smoke": {},
-    "Air-pollution": {},
-    "Water level ": {}
+    "Travelled (car, public transport, on foot)": {},
+    "Gps ": {}
+  },
+  "Sound-level": {
+    "sid": "decibel",
+    "frq": "5",
+    "loc": "?",
+    "pos": ["People", "Car", "Outoodrs"],
+    "out": {
+      "t": "grams of water vapor per kilogram of air (g/kg)",
+      "p": "whatever",
+      "u": "gkg",
+      "r": ["0%", "100%"],
+      "d": "number"
+    }
+  },
+  "Light sensors": {
+    "sid": "light_sensor",
+    "frq": "5",
+    "loc": "?",
+    "pos": ["Outoodrs"],
+    "out": {
+      "t": "lux",
+      "p": "whatever",
+      "r": ["0", "100000"],
+      "u": "lx",
+      "d": "number"
+    }
+  },
+  "Shape of objects": {},
+  "Traffic lights": {},
+  "Speed": {},
+  "Timestamp": {},
+  "Thermal sensors": {},
+  "Smoke": {},
+  "Air-pollution": {},
+  "Water level ": {}
 }
-
-// – sid - sensor ID
-// – frq - maximal sampling frequency 
-// – loc - physical location being sensed 
-// – pos - physical location of the sensor 
-// – out - a tuple ht, p, u, r, di describing the output 
-// – t - the type of physical property/quantity measured in the environment 
-// – p - precision of measurement 
-// – u - unit of measurement 
-// – r - range of values 
-// – d - data type
