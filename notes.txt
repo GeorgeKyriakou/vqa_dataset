@@ -12,3 +12,7 @@ factorial(n) {
 }
 
 
+Should we create a single template for ? For example:
+
+Template1: Is the temperature outside <less, lower, smaller than>
+Template2: Is the temperature outside <more, higher, bigger, larger than>

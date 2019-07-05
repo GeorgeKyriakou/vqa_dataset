@@ -13,7 +13,10 @@
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
     "Vehicle_speed": [0, 240],
     "Distance": null,
-    "Quantity": null
+    "Quantity": null,
+    "Relation": [
+      "inside", "outside"
+    ]
   },
   "functions": [
     {
