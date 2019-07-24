@@ -12,6 +12,12 @@
     "Timestamp": null,
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
     "Vehicle_speed": [0, 240],
+    "Vehicle": [
+      "car", "trucks", "motorbikes"
+    ],
+    "Sensor": [
+      "noise_polution", "parked"
+    ],
     "Distance": null,
     "Quantity": null,
     "Relation": [
