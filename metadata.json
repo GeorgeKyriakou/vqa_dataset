@@ -4,23 +4,22 @@
     "EntitySet": null,
     "Integer": null,
     "Bool": [true, false],
-    "Temperature": [-30.0, 50.0],
-    "Wind_speed": [0, 12],
-    "Volume": [0, 100],
-    "Light_level": [0, 100000],
-    "Timestamp": null,
+    "Temperature": ["cold", "warm", "hot"],
+    "Volume": ["silent", "quiet", "loud"],
+    "Light_level": ["dark", "bright"],
+    "Time": ["morning","noon", "evening", "night"],
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
-    "Vehicle_speed": [0, 240],
+    "Vehicle_speed": ["slow","medium","fast"],
     "Vehicle": [
       "car", "trucks", "motorbikes"
     ],
     "Sensor": [
       "noise_polution", "parked"
     ],
-    "Distance": null,
+    "Distance": ["near", "far"],
     "Quantity": null,
     "Relation": [
-      "inside", "outside"
+      "inside", "outside","left","right","in front"
     ],
     "Location": [
       

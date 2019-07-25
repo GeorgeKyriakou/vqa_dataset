@@ -7,7 +7,7 @@
    "text":[  
      "Is the <T> <R> the <L> equal to that <R1> <T>?",
      "Is the <T> <R> <L> equal to <R1> of <L>?", 
-      "Given <T> <R> <L> and <T2> <R2> <L> , is <T1> equal to <T2>?"
+     "Given <T> <R> <L> and <T2> <R2> <L> , is <T1> equal to <T2>?"
    ],
 
    "nodes": [
@@ -20,7 +20,7 @@
      {"type": "NULL", "params": ["<Z2>"]}
    ]
  },
-// egw
+
  {
   "params": [
     {"type": "Location", "name": "<L>"},
