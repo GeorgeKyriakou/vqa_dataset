@@ -1,5 +1,4 @@
 {
-  "dataset": "EKSYPN_v1",
   "types": {
     "Entity": null,
     "EntitySet": null,
@@ -22,6 +21,9 @@
     "Quantity": null,
     "Relation": [
       "inside", "outside"
+    ],
+    "Location": [
+      
     ]
   },
   "functions": [

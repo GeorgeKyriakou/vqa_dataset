@@ -1,26 +1,20 @@
-/**
-* <S> = 
-* <L> = 
-* <C> = compare (more,less, higher,lower, equal... etc)
-*/
-
 [{
    "params": [
-     {"type": "Sensor", "name": "<S>"},
-     {"type": "Location ", "name": "<L>"},
-     {"type": "Comparer", "name": "<C>"},
+     {"type": "Temperature", "name": "<T>"},
+     {"type": "Location", "name": "<L>"},
+     {"type": "Relation", "name": "<R>"},
    ],
    "text":[  
-      "Is the <S> at <L1> <C> than [the one] at <L2>?", 
-      "Given <S1> and <S2> at <L1> and <L2>"
+     "Is the <T> <R> the <L> equal to that <R1> <T>?",
+     "Is the <T> <R> <L> equal to <R1> of <L>?", 
+      "Given <T> <R> <L> and <T2> <R2> <L> , is <T1> equal to <T2>?"
    ],
 
    "nodes": [
-     {"type": "scene", "inputs": ["temperature", "image"]},
+     {"type": "temperature", "inputs": [ ]},
      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
      {"type": "filter_temperature", "inputs": [1], "side_inputs": ["<T>"]},
-     {"type": "filter_cars", "inputs": [1], "side_inputs": ["<R>", "<Z2>", "<C2>", "<M2>", "<S2>"]},
-     {"type": "query_size", "inputs": [2]}
+     {"type": "compare", "inputs": [2]}
    ],
    "constraints": [
      {"type": "NULL", "params": ["<Z2>"]}
@@ -29,13 +23,13 @@
 // egw
  {
   "params": [
-    {"type": "Sensor", "name": "<S>"},
-    {"type": "Location ", "name": "<L>"},
-    {"type": "Comparer", "name": "<C>"},
+    {"type": "Location", "name": "<L>"},
+    {"type": "Malmo Stadium", "name": "<MST>"},
+    {"type": "Cars", "name": "<C>"},
+    {"type": "Parked", "name": "<P>"},
   ],
   "text":[  
-     "Is the <S> at <L1> <C> than [the one] at <L2>?", 
-     "Are there more cars parked at the Shopping Mall than at Malmo Stadium?"
+     "Are there more <C> <P> at the <SM> than at <MST>?"
   ],
 
   "nodes": [
