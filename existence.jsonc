@@ -31,7 +31,7 @@
       {"type": "image", "inputs": []},
       {"type": "filter_vehicle", "inputs": [0], "side_inputs": ["<V>"]},
       {"type": "filter_sensor", "inputs": [1], "side_inputs": ["<S>"]},
-      {"type": "filter_location", "inputs": [3], "side_inputs": ["<L>"]},
+      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
       {"type": "query_size", "inputs": [3]}
     ],
     "constraints": [
