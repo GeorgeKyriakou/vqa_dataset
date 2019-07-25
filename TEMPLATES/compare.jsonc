@@ -57,10 +57,10 @@
 
   "nodes": [
     {"type": "scene", "inputs": ["image"]},
-    {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
-    {"type": "filter_temperature", "inputs": [1], "side_inputs": ["<T>"]},
-    {"type": "filter_cars", "inputs": [1], "side_inputs": ["<R>", "<Z2>", "<C2>", "<M2>", "<S2>"]},
-    {"type": "query_size", "inputs": [2]}
+    {"type": "filter_location", "inputs": [0], "side_inputs": ["<L>"]},
+    {"type": "filter_vehicles", "inputs": [1], "side_inputs": ["<L>", "<V>"]},
+    {"type": "filter_vehicles_movement_type", "inputs": [1], "side_inputs": ["<TM>"]},
+    {"type": "compare", "inputs": [2]}
   ],
   "constraints": [
     {"type": "OUT_NEQ", "params": ["<L2>"]}
