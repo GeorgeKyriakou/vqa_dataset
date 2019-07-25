@@ -1,0 +1,62 @@
+[
+  {
+    "params": [
+      {"type": "Sensor", "name": "<NP>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Is there <NP> at <L>?",
+    ],
+    "nodes": [
+      {"type": "audio", "inputs": []},
+      {"type": "filter_sensor", "inputs": [0], "side_inputs": ["<NP>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [2]}
+    ],
+    "constraints": [
+      // {"type": "NULL", "params": ["<Z2>"]}
+    ]
+  },
+  {
+    "params": [
+      {"type": "Vehicles", "name": "<V>"},
+      {"type": "Sensor", "name": "<S>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "text":[  
+      "Are there <V> <S> at <L>?",
+      "Are there <V> <S> at <L>?"
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_vehicle", "inputs": [0], "side_inputs": ["<V>"]},
+      {"type": "filter_sensor", "inputs": [1], "side_inputs": ["<S>"]},
+      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [3]}
+    ],
+    "constraints": [
+      // {"type": "NULL", "params": ["<Z2>"]}
+    ]
+  },
+  {
+    "params": [
+      {"type": "Shouting", "name": "<SH>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "text":[  
+      "Is someone <SH> at <L>?"
+      "[ audio-image, filter_location, filter_volume, exists]",
+      "Are there <V> <S> at <L>?"
+    ],
+    "nodes": [
+      {"type": "audio-image", "inputs": []},
+      {"type": "filter_vehicle", "inputs": [0], "side_inputs": ["<V>"]},
+      {"type": "filter_sensor", "inputs": [1], "side_inputs": ["<S>"]},
+      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [3]}
+    ],
+    "constraints": [
+      // {"type": "NULL", "params": ["<Z2>"]}
+    ]
+  }
+]
