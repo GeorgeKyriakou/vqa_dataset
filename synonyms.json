@@ -7,6 +7,8 @@
   "calculate": ["more than", "less than", "equal to"],
   "position": ["above", "behind", "in front of", "right of", "left of"],
   "temperature": ["temperature", "degrees"],
+  "moving": ["moving", "in motion"], 
+  "stopped": ["parked", "stationary", "stopped"],
   "outside": ["outside", "outdoors"],
   "trucks": ["trucks", "van"],
   "people": ["people", "humans"],

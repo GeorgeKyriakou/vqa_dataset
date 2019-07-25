@@ -20,12 +20,12 @@
   {
     "params": [
       {"type": "Vehicles", "name": "<V>"},
-      {"type": "Sensor", "name": "<S>"},
+      {"type": "Vehicle_Movement_Type", "name": "<TM>"},
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
-      "Are there <V> <S> at <L>?",
-      "Are there <V> <S> at <L>?"
+      "Are there <V> <TM> at <L>?",
+      "Are there <V> <TM> at <L>?"
     ],
     "nodes": [
       {"type": "image", "inputs": []},
