@@ -1,15 +1,15 @@
 [
   {
     "params": [
-      {"type": "Sensor", "name": "<NP>"},
+      {"type": "Noise Level", "name": "<NL>"}, // noise polution need change to noise lvl
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
-      "Is there <NP> at <L>?",
+      "Is there <NL> at <L>?",
     ],
     "nodes": [
       {"type": "audio", "inputs": []},
-      {"type": "filter_sensor", "inputs": [0], "side_inputs": ["<NP>"]},
+      {"type": "filter_noise_lvl", "inputs": [0], "side_inputs": ["<NP>"]},
       {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
       {"type": "query_size", "inputs": [2]}
     ],
@@ -20,12 +20,12 @@
   {
     "params": [
       {"type": "Vehicles", "name": "<V>"},
-      {"type": "Vehicle_Movement_Type", "name": "<TM>"},
+      {"type": "Vehicle_Movement_Type", "name": "<MT>"},
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
-      "Are there <V> <TM> at <L>?",
-      "Are there <V> <TM> at <L>?"
+      "Are there <V> <MT> at <L>?",
+      "Are there <V> <MT> at <L>?"
     ],
     "nodes": [
       {"type": "image", "inputs": []},
@@ -33,6 +33,46 @@
       {"type": "filter_sensor", "inputs": [1], "side_inputs": ["<S>"]},
       {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
       {"type": "query_size", "inputs": [3]}
+    ],
+    "constraints": [
+      // {"type": "NULL", "params": ["<Z2>"]}
+    ]
+  },
+  {
+    "params": [
+      {"type": "Human", "name": "<H>"},
+      {"type": "Voice", "name": "<V>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Is a <H> <V> at <L>?"
+	
+    ],
+    "nodes": [
+      {"type": "audio-image", "inputs": []},
+      {"type": "filter_human", "inputs": [0], "side_inputs": ["<V>"]},
+      {"type": "filter_voice", "inputs": [1], "side_inputs": ["<S>"]},
+      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [3]}
+    ],
+    "constraints": [
+      // {"type": "NULL", "params": ["<Z2>"]}
+    ]
+  },
+  {
+    "params": [
+      {"type": "Disaster", "name": "<D>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Is there a <D> at <L>?" 
+	
+    ],
+    "nodes": [
+      {"type": "audio-image", "inputs": []},
+      {"type": "filter_disaster", "inputs": [0], "side_inputs": ["<D>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [2]}
     ],
     "constraints": [
       // {"type": "NULL", "params": ["<Z2>"]}

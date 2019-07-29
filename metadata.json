@@ -19,8 +19,17 @@
     "Vehicle_State": [
        "parked", "driving"
     ],
-    "Sensor": [
-      "noise_polution", "parked"
+    "Noise Level": [
+      "high", "medium", "low"
+    ],
+    "Human": [
+      "man", "woman", "girl", "boy", "oldman", "oldwoman", "baby"
+    ],
+    "Disasters": [
+      "flood", "fire",
+    ],
+    "Voice": [
+      "shout", "mutter", "talk"
     ],
     "Distance": ["near", "far"],
     "Quantity": null,

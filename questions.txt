@@ -35,8 +35,8 @@ Existence - Binary (yes/no)
 	[ audio-image, filter_location, filter_volume, exists]
 
 
-4) Is there a high noise level in Folkets Park area? 
-	[ audio, filter_location, filter_volume, exists]
+// 4) Is there a high noise level in Folkets Park area? 
+//	[ audio, filter_location, filter_volume, exists]
 
 5) Is there a fire or flood at Malmo Stadium?
 	[ temperature-image, filter_location, filter_fire, fork, filter_location, filter_flood, union, exists]
