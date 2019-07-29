@@ -28,9 +28,9 @@
     {"type": "Vehicle_Movement_Type", "name": "<TM>"},
   ],
   "text":[  
-     "Are there more <V> <TM> at <L1> than <L2>?",
-     "Are the <V> that are <TM> more <L1> than <L2>?"
-
+     "Are there more <TM> <V> at <L1> than <L2>?",
+     "Are the <V> that are <TM> at <L1> more than <L2>?",
+     "Compare the <TM> <V> at <L1> and <L2>; which are more? "
   ],
   "nodes": [
     {"type": "scene", "inputs": ["image"]},
@@ -51,8 +51,8 @@
   ],
   "text":[  
      "Are there less <V> <TM> at <L1> than <L2>?",
-     "Are the <V> that are <TM> less <L1> than <L2>?"
-
+     "Are the <V> that are <TM> at <L1> less than <L2>?",
+     "Compare the <TM> <V> at <L1> and <L2>; which are less?"
   ],
 
   "nodes": [
