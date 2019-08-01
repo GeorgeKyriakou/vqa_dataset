@@ -1,21 +1,20 @@
 [
   {
     "params": [
-      {"type": "Noise Level", "name": "<NL>"}, // noise polution need change to noise lvl
+      {"type": "Noise Level", "name": "<NL>"}, 
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
       "Is there <NL> at <L>?",
+      "Αt <L> ιs there <NL> ?"
     ],
     "nodes": [
       {"type": "audio", "inputs": []},
-      {"type": "filter_noise_lvl", "inputs": [0], "side_inputs": ["<NP>"]},
+      {"type": "filter_noise_lvl", "inputs": [1], "side_inputs": ["<NP>"]},
       {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
-      {"type": "query_size", "inputs": [2]}
+      {"type": "existence", "inputs": [1]}
     ],
-    "constraints": [
-      // {"type": "NULL", "params": ["<Z2>"]}
-    ]
+    "constraints": []
   },
   {
     "params": [
@@ -25,18 +24,16 @@
     ],
     "text":[  
       "Are there <V> <MT> at <L>?",
-      "Are there <V> <MT> at <L>?"
+      "Αt <L>, αre there <V> <MT>?"
     ],
     "nodes": [
       {"type": "image", "inputs": []},
-      {"type": "filter_vehicle", "inputs": [0], "side_inputs": ["<V>"]},
+      {"type": "filter_vehicle", "inputs": [1], "side_inputs": ["<V>"]},
       {"type": "filter_sensor", "inputs": [1], "side_inputs": ["<S>"]},
-      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
-      {"type": "query_size", "inputs": [3]}
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
     ],
-    "constraints": [
-      // {"type": "NULL", "params": ["<Z2>"]}
-    ]
+    "constraints": []
   },
   {
     "params": [
@@ -45,19 +42,19 @@
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
-      "Is a <H> <V> at <L>?"
-	
+      "Is a <H> <V> at <L>?",
+      "Αt <L>, ιs there a <H> <V>?" 
+
     ],
     "nodes": [
-      {"type": "audio-image", "inputs": []},
-      {"type": "filter_human", "inputs": [0], "side_inputs": ["<V>"]},
+      {"type": "image", "inputs": []},
+      {"type": "audio", "inputs": []},
+      {"type": "filter_human", "inputs": [1], "side_inputs": ["<V>"]},
       {"type": "filter_voice", "inputs": [1], "side_inputs": ["<S>"]},
-      {"type": "filter_location", "inputs": [2], "side_inputs": ["<L>"]},
-      {"type": "query_size", "inputs": [3]}
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "query_size", "inputs": [1]}
     ],
-    "constraints": [
-      // {"type": "NULL", "params": ["<Z2>"]}
-    ]
+    "constraints": []
   },
   {
     "params": [
@@ -65,17 +62,104 @@
       {"type": "Location ", "name": "<L>"},
     ],
     "text":[  
-      "Is there a <D> at <L>?" 
-	
+      "Is there a <D> at <L>?", 
+      "Αt <L>, ιs there a <D>?",
+      "In which <L> there is <D>"
     ],
     "nodes": [
-      {"type": "audio-image", "inputs": []},
-      {"type": "filter_disaster", "inputs": [0], "side_inputs": ["<D>"]},
+      {"type": "audio", "inputs": []},
+      {"type": "image", "inputs": []},
+      {"type": "filter_disaster", "inputs": [1], "side_inputs": ["<D>"]},
       {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
-      {"type": "query_size", "inputs": [2]}
+      {"type": "existence", "inputs": [1]}
     ],
-    "constraints": [
-      // {"type": "NULL", "params": ["<Z2>"]}
-    ]
+    "constraints": []
+  },
+  {
+    "params": [
+      {"type": "Vehicle_Movement_Type", "name": "<VMT>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Is there a <VMT> at <L>?",
+      "Αt <L>, ιs there a <VMT>?" 
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_vehicle_movement_type", "inputs": [1], "side_inputs": ["<VMT>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
+    ],
+    "constraints": []
+  },
+  {
+    "params": [
+      {"type": "Lights", "name": "<LI>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Are the <LI> at <L>?",
+      "Αt <L>, are the <LI> ?" 
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_vehicle_movement_type", "inputs": [1], "side_inputs": ["<LI>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
+    ],
+    "constraints": []
+  },
+  {
+    "params": [
+      {"type": "Buildings", "name": "<B>"},
+      {"type": "Disasters", "name": "<D>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[  
+      "Is <B> on <D> at <L>?",
+      "Αt <L>, is on <D> at<L> ?" 
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_building", "inputs": [1], "side_inputs": ["<B>"]},
+      {"type": "filter_disaster", "inputs": [1], "side_inputs": ["<D>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
+    ],
+    "constraints": []
+  },
+  {
+    "params": [
+      {"type": "Traffic_Lights", "name": "<TL>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[
+      "Do <TL> work at<L>?",
+      "Are <TL> on at <L>?"
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_traffic_lights", "inputs": [1], "side_inputs": ["<TL>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
+    ],
+    "constraints": []
+  },
+  {
+    "params": [
+      {"type": "Explosion", "name": "<EXP>"},
+      {"type": "Location ", "name": "<L>"},
+    ],
+    "text":[
+      "Has there been an <EXP> at <L>?",
+      "Is there any <EXP> at <L>?"
+    ],
+    "nodes": [
+      {"type": "image", "inputs": []},
+      {"type": "filter_explosion", "inputs": [1], "side_inputs": ["<EXP>"]},
+      {"type": "filter_location", "inputs": [1], "side_inputs": ["<L>"]},
+      {"type": "existence", "inputs": [1]}
+    ],
+    "constraints": []
   }
 ]
