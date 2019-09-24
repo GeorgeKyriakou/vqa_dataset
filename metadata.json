@@ -6,7 +6,8 @@
     "Bool": [true, false],
     "Temperature": ["cold", "warm", "hot"],
     "Volume": ["silent", "quiet", "loud"],
-    "Light_level": ["dark", "bright"],
+    "Lights": ["on", "off"],
+    "Traffic_Lights": ["on", "off"],
     "Time": ["morning","noon", "evening", "night"],
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
     "Vehicle_speed": ["slow","medium","fast"],
@@ -28,6 +29,9 @@
     "Disasters": [
       "flood", "fire"
     ],
+    "Building": [
+      "shop", "house"
+    ],
     "Voice": [
       "shout", "mutter", "talk"
     ],
@@ -37,7 +41,7 @@
       "inside", "outside","left","right","in front"
     ],
     "Location": [
-      
+      "malmö universitty", "central train station", "shopping mall", "malmö stadium", "city center", "folkets park"
     ]
   },
   "functions": [

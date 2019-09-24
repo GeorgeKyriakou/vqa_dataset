@@ -18,5 +18,10 @@
   "less than": ["less than", "bellow"],
   "nearest": ["nearest", "closest"],
   "noise level": ["noise level", "volume"],
-  "work": ["work", "function"]
+  "work": ["work", "function"],
+  "central train station": ["central train station","central station","train station","malmö central train station","malmo central train station","malmö central station","malmo central station","malmö station","malmo station","malmö central","malmo central"],
+  "shopping mall": ["shopping mall","mall"],
+  "malmö stadium": ["malmö stadium","malmo stadium","malmö arena","malmo arena"],
+  "city center": ["city center","town center","central city","main center","center"],
+  "malmö university": ["malmö university","malmo university","university of malmö","university of malmo"]
 }
