@@ -8,40 +8,27 @@
     "Volume": ["silent", "quiet", "loud"],
     "Lights": ["on", "off"],
     "Traffic_Lights": ["on", "off"],
-    "Time": ["morning","noon", "evening", "night"],
+    "Time": ["morning", "noon", "evening", "night"],
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
-    "Vehicle_speed": ["slow","medium","fast"],
-    "Vehicle": [
-      "car", "trucks", "motorbikes"
-    ],
-    "Vehicle_Movement_Type": [
-      "moving", "stopped"
-    ],
-    "Vehicle_State": [
-       "parked", "driving"
-    ],
-    "Noise Level": [
-      "high", "medium", "low"
-    ],
-    "Human": [
-      "man", "woman", "girl", "boy", "oldman", "oldwoman", "baby"
-    ],
-    "Disasters": [
-      "flood", "fire"
-    ],
-    "Building": [
-      "shop", "house"
-    ],
-    "Voice": [
-      "shout", "mutter", "talk"
-    ],
+    "Vehicle_speed": ["slow", "medium", "fast"],
+    "Vehicles": ["car", "trucks", "motorbikes"],
+    "Vehicle_Movement_Type": ["moving", "stopped"],
+    "Vehicle_State": ["parked", "driving"],
+    "Noise Level": ["high", "medium", "low"],
+    "Human": ["man", "woman", "girl", "boy", "oldman", "oldwoman", "baby"],
+    "Disasters": ["flood", "fire"],
+    "Building": ["shop", "house"],
+    "Voice": ["shout", "mutter", "talk"],
     "Distance": ["near", "far"],
     "Quantity": null,
-    "Relation": [
-      "inside", "outside","left","right","in front"
-    ],
+    "Relation": ["inside", "outside", "left", "right", "in front"],
     "Location": [
-      "malmö universitty", "central train station", "shopping mall", "malmö stadium", "city center", "folkets park"
+      "malmö universitty",
+      "central train station",
+      "shopping mall",
+      "malmö stadium",
+      "city center",
+      "folkets park"
     ]
   },
   "functions": [
