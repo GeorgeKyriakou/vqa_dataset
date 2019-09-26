@@ -2,7 +2,7 @@
   {
     "params": [
       {"type": "Noise Level", "name": "<NL>"}, 
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Is there <NL> at <L>?",
@@ -20,7 +20,7 @@
     "params": [
       {"type": "Vehicles", "name": "<V>"},
       {"type": "Vehicle_Movement_Type", "name": "<MT>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Are there <V> <MT> at <L>?",
@@ -39,7 +39,7 @@
     "params": [
       {"type": "Human", "name": "<H>"},
       {"type": "Voice", "name": "<V>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Is a <H> <V> at <L>?",
@@ -59,7 +59,7 @@
   {
     "params": [
       {"type": "Disaster", "name": "<D>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Is there a <D> at <L>?", 
@@ -78,7 +78,7 @@
   {
     "params": [
       {"type": "Vehicle_Movement_Type", "name": "<VMT>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Is there a <VMT> at <L>?",
@@ -95,7 +95,7 @@
   {
     "params": [
       {"type": "Lights", "name": "<LI>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Are the <LI> at <L>?",
@@ -113,7 +113,7 @@
     "params": [
       {"type": "Buildings", "name": "<B>"},
       {"type": "Disasters", "name": "<D>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[  
       "Is <B> on <D> at <L>?",
@@ -131,7 +131,7 @@
   {
     "params": [
       {"type": "Traffic_Lights", "name": "<TL>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[
       "Do <TL> work at<L>?",
@@ -148,7 +148,7 @@
   {
     "params": [
       {"type": "Explosion", "name": "<EXP>"},
-      {"type": "Location ", "name": "<L>"},
+      {"type": "Location ", "name": "<L>"}
     ],
     "text":[
       "Has there been an <EXP> at <L>?",
