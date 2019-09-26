@@ -23,7 +23,7 @@ compare_tamplates.forEach(template => {
         const variableToReplace = paramNamesArray[index];
         //search in sentence with 'variableToReplace', using 'regexForVariable',  and replace with word
         //push sentence in "global" array of sentences
-        //repeat for next template
+        //repeat for next sentence
       });
     });
   });
