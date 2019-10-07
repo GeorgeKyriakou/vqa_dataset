@@ -1,8 +1,7 @@
 const fs = require("fs");
 
 const compare_tamplates = require("./TEMPLATES/compare.json");
-const metadata = require("./metadata.json");
-const { combineAll } = require("./helpers/combineAll.js");
+const { combineAll } = require("./helpers/helpers.js");
 
 let questionsArray = [];
 compare_tamplates.forEach(template => {
@@ -24,7 +23,9 @@ compare_tamplates.forEach(template => {
           if (regEx.test(sentence)) {
             questionsArray.push(updatedSentence);
           } else {
-            console.info(`Could not match ${variableToReplace} in sentence`);
+            console.info(
+              `Could not match ${variableToReplace} in: '${sentence}' `
+            );
           }
         } catch (e) {
           console.error("ERROR", e);
@@ -44,7 +45,3 @@ questionsArray.forEach(v => {
   file.write(v + "\n");
 });
 file.end();
-
-String.prototype.replaceAll = function(search, replacement) {
-  return this.split(search).join(replacement);
-};
