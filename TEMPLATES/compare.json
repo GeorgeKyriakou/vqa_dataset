@@ -2,13 +2,16 @@
   {
     "params": [
       { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
       { "type": "Location", "name": "<L>" },
-      { "type": "Relation", "name": "<R>" }
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Relation", "name": "<R>" },
+      { "type": "Relation", "name": "<R1>" }
     ],
     "text": [
-      "Is it equally <T> <R> <L> compared to that <R>?",
-      "Is it <T> <R> at <L> than that at <L2>?",
-      "Given <T> <R> <L> and <T2> <R2> <L> , is <T1> equal to <T2>?"
+      "Is it equally <T> <R> <L> compared to that <R1>?",
+      "Is it <T> <R> at <L> than that at <L1>?",
+      "Given <T> <R> <L> and <T1> <R1> <L>, is <T1> equal to <T>?"
     ],
 
     "nodes": [
@@ -19,6 +22,4 @@
     ],
     "constraints": [{ "type": "NULL", "params": ["<Z2>"] }]
   }
-
- 
 ]

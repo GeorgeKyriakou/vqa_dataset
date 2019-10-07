@@ -4,7 +4,7 @@
     "EntitySet": null,
     "Integer": null,
     "Bool": [true, false],
-    "Temperature": ["cold", "warm", "hot"],
+    "Temperature": ["cold", "warm", "hot", "freezing"],
     "Volume": ["silent", "quiet", "loud"],
     "Lights": ["on", "off"],
     "Traffic_Lights": ["on", "off"],
