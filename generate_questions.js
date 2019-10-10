@@ -11,7 +11,6 @@ const regexForVariable = /\<(.*?)\>/gm;
 compare_tamplates.forEach(template => {
   template.text.forEach(sentence => {
     const original = sentence;
-    // regex = sentence.match(regexForVariable).map(s => `<${s.split("")[1]}>`);
     regex = sentence.match(regexForVariable);
 
     const paramTypeFromMetadata = regex.map(name => {
