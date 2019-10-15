@@ -2,13 +2,16 @@
   {
     "params": [
       { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
       { "type": "Location", "name": "<L>" },
-      { "type": "Relation", "name": "<R>" }
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Relation", "name": "<R>" },
+      { "type": "Relation", "name": "<R1>" }
     ],
     "text": [
-      "Is it <T> <R>  <L> equal to that <R1> <T>?",
-      "Is it <R> <T> at <L> than that at <L2>?",
-      "Given <T> <R> <L> and <T2> <R2> <L> , is <T1> equal to <T2>?"
+      "Is it equally <T> <R> <L> compared to that <R1>?",
+      "Is it <T> <R> at <L> than that at <L1>?",
+      "Given <T> <R> <L> and <T1> <R1> <L>, is <T1> equal to <T>?"
     ],
 
     "nodes": [
@@ -18,63 +21,5 @@
       { "type": "compare", "inputs": [2] }
     ],
     "constraints": [{ "type": "NULL", "params": ["<Z2>"] }]
-  },
-
-  {
-    "params": [
-      { "type": "Location", "name": "<L>" },
-      { "type": "Vehicles", "name": "<V>" },
-      { "type": "Vehicle_Movement_Type", "name": "<TM>" }
-    ],
-    "text": [
-      "Are there more <TM> <V> at <L1> than <L2>?",
-      "Are the <V> that are <TM> at <L1> more than <L2>?",
-      "Compare the <TM> <V> at <L1> and <L2>; which are more? "
-    ],
-    "nodes": [
-      { "type": "scene", "inputs": ["image"] },
-      { "type": "filter_location", "inputs": [0], "side_inputs": ["<L>"] },
-      {
-        "type": "filter_vehicles",
-        "inputs": [1],
-        "side_inputs": ["<L>", "<V>"]
-      },
-      {
-        "type": "filter_vehicles_movement_type",
-        "inputs": [1],
-        "side_inputs": ["<TM>"]
-      },
-      { "type": "compare", "inputs": [2] }
-    ],
-    "constraints": [{ "type": "OUT_NEQ", "params": ["<L2>"] }]
-  },
-  {
-    "params": [
-      { "type": "Location", "name": "<L>" },
-      { "type": "Vehicles", "name": "<V>" },
-      { "type": "Vehicle_Movement_Type", "name": "<TM>" }
-    ],
-    "text": [
-      "Are there less <V> <TM> at <L1> than <L2>?",
-      "Are the <V> that are <TM> at <L1> less than <L2>?",
-      "Compare the <TM> <V> at <L1> and <L2>; which are less?"
-    ],
-
-    "nodes": [
-      { "type": "scene", "inputs": ["image"] },
-      { "type": "filter_location", "inputs": [0], "side_inputs": ["<L>"] },
-      {
-        "type": "filter_vehicles",
-        "inputs": [1],
-        "side_inputs": ["<L>", "<V>"]
-      },
-      {
-        "type": "filter_vehicles_movement_type",
-        "inputs": [1],
-        "side_inputs": ["<TM>"]
-      },
-      { "type": "compare", "inputs": [2] }
-    ],
-    "constraints": [{ "type": "OUT_NEQ", "params": ["<L2>"] }]
   }
 ]
