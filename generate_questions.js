@@ -11,13 +11,15 @@ String.prototype.replaceAll = function(search, replacement) {
 const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
 compare_tamplates.forEach(template => {
-  template.questions.forEach(({ text, scene }) => {
+  const answer = getAnswer(template.nodes, template.functions_map);
+  template.questions.forEach(({ text }) => {
     const original = text;
     regex = text.match(regexForVariable);
     const paramTypeFromMetadata = regex.map(name => {
       const p = template.params.find(p => p.name === name);
       return p && metadata.types[p.type];
     });
+
     const arrayOfWordCombinations = combineAll(...paramTypeFromMetadata);
 
     arrayOfWordCombinations.forEach(wordCombination => {
@@ -28,7 +30,6 @@ compare_tamplates.forEach(template => {
           temp = text.replace(variableByLetter, wordCombination[i]);
           text = temp;
         });
-        const answer = getAnswer(scene, wordCombination);
         if (answer) {
           sentenceArray.push(JSON.stringify({ text, answer }));
         } else {

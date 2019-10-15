@@ -1,37 +1,46 @@
 [
   {
     "params": [
-      { "type": "MathCompare", "name": "<M>" },
       { "type": "Temperature", "name": "<T>" },
       { "type": "Temperature", "name": "<T1>" },
       { "type": "Location", "name": "<L>" },
       { "type": "Location", "name": "<L1>" },
-      { "type": "Position_absolute", "name": "<PA>" },
-      { "type": "Position_absolute", "name": "<PA1>" }
+      { "type": "Position_relative", "name": "<PR>" },
+      { "type": "Position_relative", "name": "<PR1>" }
     ],
     "questions": [
       {
-        "text": "Is it <M> <T> <PA> at <L> compared to <PA1>?",
-        "scene": "temperture"
+        "text": "Is it equally <T> <PR> <L> compared to <PR1>?"
       },
       {
-        "text": "Is it <M> <T> <PA> <L> than <PA1>?",
-        "scene": "temperture"
+        "text": "Is it as <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "Given the location <L>, is it <M> <T> <PA> than <PA1>?",
-        "scene": "temperture"
-      },
-      {
-        "text": "Given the location <L>, is it <M> <T> <PA> compared to <PA1>?",
-        "scene": "temperture"
+        "text": "Given the location <L>, is it as <T> <PR> compared to <PR1>?"
       }
     ],
 
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<PR>", "<T>"],
+        "inputs": [0],
+        "type": "filter_measure"
+      },
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<PR1>", "<T>"],
+        "inputs": [0],
+        "type": "filter_measure"
+      },
+      { "inputs": [1, 3], "type": "equal_integer" }
+    ],
+
     "functions_map": [
-      { "function": "filter_temperature", "type": "Temperature" },
-      { "function": "filter_location", "type": "Location" },
-      { "function": "filter_position", "type": "Relation" }
+      { "function": "filter_temperature", "name": "<T>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_position", "name": "<PR>" },
+      { "function": "filter_position", "name": "<PR1>" }
     ]
   }
 ]

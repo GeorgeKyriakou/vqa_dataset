@@ -4,6 +4,7 @@
     "EntitySet": null,
     "Integer": null,
     "Bool": [true, false],
+    "Sensor": ["temperature", "humidity", "sound", "light"],
     "Temperature": [
       "cold",
       "chilly",
@@ -32,15 +33,8 @@
     "Voice": ["shout", "mutter", "talk"],
     "Distance": ["near", "far"],
     "MathCompare": ["equally", "less", "more"],
-    "Position_absolute": ["inside", "outside"],
-    "Position_relative": [
-      "left",
-      "right",
-      "in front",
-      "behind",
-      "above",
-      "below"
-    ],
+    "Position_absolute": [],
+    "Position_relative": ["inside", "outside"],
     "Location": [
       "malmö university",
       "central train station",
