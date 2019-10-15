@@ -4,7 +4,18 @@
     "EntitySet": null,
     "Integer": null,
     "Bool": [true, false],
-    "Temperature": ["cold", "warm", "hot", "freezing"],
+    "Temperature": [
+      "cold",
+      "chilly",
+      "cool",
+      "toasty",
+      "mild",
+      "pleasant",
+      "snug",
+      "warm",
+      "hot",
+      "freezing"
+    ],
     "Volume": ["silent", "quiet", "loud"],
     "Lights": ["on", "off"],
     "Traffic_Lights": ["on", "off"],
@@ -20,8 +31,16 @@
     "Building": ["shop", "house"],
     "Voice": ["shout", "mutter", "talk"],
     "Distance": ["near", "far"],
-    "Quantity": null,
-    "Relation": ["inside", "outside", "left", "right", "in front"],
+    "MathCompare": ["equally", "less", "more"],
+    "Position_absolute": ["inside", "outside"],
+    "Position_relative": [
+      "left",
+      "right",
+      "in front",
+      "behind",
+      "above",
+      "below"
+    ],
     "Location": [
       "malmö university",
       "central train station",
@@ -34,12 +53,14 @@
   "functions": [
     {
       "name": "scene",
+      "connector": "",
       "inputs": [],
       "output": "EntitySet",
       "terminal": false
     },
     {
       "name": "count",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Quantity"],
       "output": ["none", "few", "many"],
@@ -47,6 +68,7 @@
     },
     {
       "name": "distance",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Distance"],
       "output": ["near", "far", "very near", "very far"],
@@ -54,6 +76,7 @@
     },
     {
       "name": "sound_level",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Volume"],
       "output": ["quiet", "normal", "loud"],
@@ -61,27 +84,31 @@
     },
     {
       "name": "measure_temperature",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Temperature"],
       "output": "Integer",
       "terminal": false
     },
     {
-      "name": "is_equal_temperature",
+      "name": "are_equal",
+      "connector": "equally",
       "inputs": ["EntitySet", "EntitySet"],
       "side_inputs": ["Temperature"],
       "output": "Boolean",
       "terminal": false
     },
     {
-      "name": "is_lower_temperature",
+      "name": "is_lower",
+      "connector": "less",
       "inputs": ["EntitySet", "EntitySet"],
       "side_inputs": ["Temperature"],
       "output": "Boolean",
       "terminal": false
     },
     {
-      "name": "is_higher_temperature",
+      "name": "is_higher",
+      "connector": "more",
       "inputs": ["EntitySet", "EntitySet"],
       "side_inputs": ["Temperature"],
       "output": "Boolean",
@@ -89,6 +116,7 @@
     },
     {
       "name": "is_weather_good",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Weather,Temperature", "Wind_speed"],
       "output": "Boolean",
@@ -96,6 +124,7 @@
     },
     {
       "name": "is_weather_bad",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Weather,Temperature", "Wind_speed"],
       "output": "Boolean",
@@ -103,6 +132,7 @@
     },
     {
       "name": "is_a_sunny_day",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Timestamp", "Light_level"],
       "output": "Boolean",
@@ -110,6 +140,7 @@
     },
     {
       "name": "traffic_conditions",
+      "connector": "",
       "inputs": ["EntitySet"],
       "side_inputs": ["Weather,Temperature", "Wind_speed"],
       "output": ["good flow", "bad flow", "jammed"],

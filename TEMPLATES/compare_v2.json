@@ -1,35 +1,37 @@
 [
-    {
-      "params": [
-        { "type": "Temperature", "name": "<T>" },
-        { "type": "Temperature", "name": "<T1>" },
-        { "type": "Location", "name": "<L>" },
-        { "type": "Location", "name": "<L1>" },
-        { "type": "Relation", "name": "<R>" },
-        { "type": "Relation", "name": "<R1>" }
-      ],
-      "questions":[
-        { 
-          "text": "Is it equally <T> <R> <L> compared to that <R1>?",
-          "scene": "temperture"
-        },
-        { 
-          "text": "Is it <T> <R> at <L> than that at <L1>?",
-          "scene": "temperture"
-        },
-        { 
-          "text":"Given <T> <R> <L> and <T1> <R1> <L>, is <T1> equal to <T>?",
-          "scene": "temperture"
-        }
-      ],
-  
-      "functions_map": [
-        { "function": "filter_temperature", "type": "Temperature"},
-        { "function": "filter_location", "type":"Location"},
-        { "function": "compare", "type": "Relation"}
-      ]
-    }
-  ]
-  
-  
-  
+  {
+    "params": [
+      { "type": "MathCompare", "name": "<M>" },
+      { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
+      { "type": "Location", "name": "<L>" },
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Position_absolute", "name": "<PA>" },
+      { "type": "Position_absolute", "name": "<PA1>" }
+    ],
+    "questions": [
+      {
+        "text": "Is it <M> <T> <PA> at <L> compared to <PA1>?",
+        "scene": "temperture"
+      },
+      {
+        "text": "Is it <M> <T> <PA> <L> than <PA1>?",
+        "scene": "temperture"
+      },
+      {
+        "text": "Given the location <L>, is it <M> <T> <PA> than <PA1>?",
+        "scene": "temperture"
+      },
+      {
+        "text": "Given the location <L>, is it <M> <T> <PA> compared to <PA1>?",
+        "scene": "temperture"
+      }
+    ],
+
+    "functions_map": [
+      { "function": "filter_temperature", "type": "Temperature" },
+      { "function": "filter_location", "type": "Location" },
+      { "function": "filter_position", "type": "Relation" }
+    ]
+  }
+]
