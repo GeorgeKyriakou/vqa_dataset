@@ -12,6 +12,7 @@ const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
 compare_tamplates.forEach(template => {
   const answer = getAnswer(template.nodes, template.functions_map);
+
   template.questions.forEach(({ text }) => {
     const original = text;
     regex = text.match(regexForVariable);

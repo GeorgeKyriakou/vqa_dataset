@@ -17,30 +17,194 @@
       },
       {
         "text": "Given the location <L>, is it as <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it equally <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it equally <T> <PR> and <PR1>?"
+      },
+      {
+        "text": "Is it equally <T> <PR> compared to <PR1> at <L>?"
+      },
+      {
+        "text": "Is it equally <T> <PR> and <PR1> at <L>?"
       }
     ],
 
     "nodes": [
       { "inputs": [], "type": "scene" },
       {
-        "side_inputs": ["<L>", "<PR>", "<T>"],
-        "inputs": [0],
-        "type": "filter_measure"
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
       },
       { "inputs": [], "type": "scene" },
       {
-        "side_inputs": ["<L>", "<PR1>", "<T>"],
-        "inputs": [0],
-        "type": "filter_measure"
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "equal_integer" }
+      { "inputs": [1, 3], "type": "compare_equal" }
     ],
 
     "functions_map": [
       { "function": "filter_temperature", "name": "<T>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "filter_position", "name": "<PR>" },
-      { "function": "filter_position", "name": "<PR1>" }
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
+      { "type": "Location", "name": "<L>" },
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Position_relative", "name": "<PR>" },
+      { "type": "Position_relative", "name": "<PR1>" }
+    ],
+    "questions": [
+      {
+        "text": "Is it less <T> <PR> <L> compared to <PR1>?"
+      },
+      {
+        "text": "Is it less <T> <PR> <L> than <PR1>?"
+      },
+      {
+        "text": "Given the location <L>, is it less <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it less <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, which is less <T>, <PR> or <PR1>?"
+      },
+      {
+        "text": "Is it less <T> <PR> compared to <PR1> at <L>?"
+      },
+      {
+        "text": "Is it less <T> <PR> and <PR1> at <L>?"
+      }
+    ],
+
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [1, 3], "type": "compare_lower" }
+    ],
+
+    "functions_map": [
+      { "function": "filter_temperature", "name": "<T>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
+      { "type": "Location", "name": "<L>" },
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Position_relative", "name": "<PR>" },
+      { "type": "Position_relative", "name": "<PR1>" }
+    ],
+    "questions": [
+      {
+        "text": "Is it more <T> <PR> <L> compared to <PR1>?"
+      },
+      {
+        "text": "Is it more <T> <PR> <L> than <PR1>?"
+      },
+      {
+        "text": "Given the location <L>, is it more <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it more <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, which is more <T>, <PR> or <PR1>?"
+      },
+      {
+        "text": "Is it more <T> <PR> compared to <PR1> at <L>?"
+      },
+      {
+        "text": "Is it more <T> <PR> and <PR1> at <L>?"
+      }
+    ],
+
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [1, 3], "type": "compare_lower" }
+    ],
+
+    "functions_map": [
+      { "function": "filter_temperature", "name": "<T>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Temperature", "name": "<T>" },
+      { "type": "Temperature", "name": "<T1>" },
+      { "type": "Location", "name": "<L>" },
+      { "type": "Location", "name": "<L1>" },
+      { "type": "Position_relative", "name": "<PR>" },
+      { "type": "Position_relative", "name": "<PR1>" }
+    ],
+    "questions": [
+      {
+        "text": "Is it approximately equally <T> <PR> <L> compared to <PR1>?"
+      },
+      {
+        "text": "Is it approximately as <T> <PR> <L> than <PR1>?"
+      },
+      {
+        "text": "Given the location <L>, is it approximately as <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it approximately equally <T> <PR> compared to <PR1>?"
+      },
+      {
+        "text": "At <L>, is it approximately equally <T> <PR> and <PR1>?"
+      },
+      {
+        "text": "Is it approximately equally <T> <PR> compared to <PR1> at <L>?"
+      },
+      {
+        "text": "Is it approximately equally <T> <PR> and <PR1> at <L>?"
+      }
+    ],
+
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [], "type": "scene" },
+      {
+        "side_inputs": ["<L>", "<T>"],
+        "inputs": [0]
+      },
+      { "inputs": [1, 3], "type": "aprox_equal_integer" }
+    ],
+
+    "functions_map": [
+      { "function": "filter_temperature", "name": "<T>" },
+      { "function": "filter_location", "name": "<L>" }
     ]
   }
 ]

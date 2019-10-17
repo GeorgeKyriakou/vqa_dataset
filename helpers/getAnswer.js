@@ -1,5 +1,3 @@
-const metadata = require("../metadata.json");
-
 module.exports.getAnswer = (nodes, functions_map) => {
   let answer = [];
   nodes.forEach((node, index) => {
