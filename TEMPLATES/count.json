@@ -2,20 +2,60 @@
   {
     "params": [
       { "type": "Location", "name": "<L>" },
-      { "type": "Vehicles", "name": "<V>" }
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicle_State", "name": "<VS>" }
     ],
-    "text": [
-      "How many <V> are parked at <L>?",
-      "Can you count how many <V> are parked at <L>?"
+    "questions": [
+      {
+        "text": "How many <V> are <VS> at <L>?"
+      },
+      {
+        "text": "Can you count how many <V> are <VS> at <L>?"
+      },
+      {
+        "text": "Give me the number of <V> that are <VS> at <L>?"
+      }
     ],
     "nodes": [
-      { "type": "image", "inputs": [] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_vehicles", "inputs": [1], "side_inputs": ["<V>"] },
-
-      { "type": "count", "inputs": [1], "side_inputs": [] }
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<V>", "<VS>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["count"] }
     ],
-    "constraints": []
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicle_state", "name": "<VS>" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Vehicles", "name": "<V>" }
+    ],
+    "questions": [
+      {
+        "text": "How many <V> are not <VS> at <L>?"
+      },
+      {
+        "text": "Can you count how many <V> are not <VS> at <L>?"
+      },
+      {
+        "text": "Give me the number of <V> that are not <VS> at <L>?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<V>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["count"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
   },
   {
     "params": [
@@ -43,15 +83,15 @@
       { "type": "Vehicles", "name": "<V>" }
     ],
     "text": [
-      "How many <V> are illegally parked at <L>?",
-      "Are there <V> are illegally parked at <L>?If yes, how many?"
+      "How many <V> are illegally <VS> at <L>?",
+      "Are there <V> are illegally <VS> at <L>?If yes, how many?"
     ],
     "nodes": [
       { "type": "image", "inputs": [] },
       { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
       { "type": "filter_vehicles", "inputs": [1], "side_inputs": ["<V>"] },
       {
-        "type": "filter_parked_illegal",
+        "type": "filter_<VS>_illegal",
         "inputs": [2],
         "side_inputs": ["<V>"]
       },
