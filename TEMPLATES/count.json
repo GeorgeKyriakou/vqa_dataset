@@ -32,7 +32,8 @@
   {
     "params": [
       { "type": "Location", "name": "<L>" },
-      { "type": "Vehicles", "name": "<V>" }
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicle_State", "name": "<VS>" }
     ],
     "questions": [
       {
@@ -47,14 +48,15 @@
     ],
     "nodes": [
       { "inputs": [] , "type": "scene"},
-      { "side_inputs": ["<L>", "<V>"],
+      { "side_inputs": ["<L>", "<V>", "<VS>"],
         "inputs": [0] 
       },
       { "inputs": [0, 1], "type": ["count"] }
     ],
     "functions_map": [
       { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicle_state", "name": "<VS>" }
     ]
   },
   {
@@ -62,42 +64,58 @@
       { "type": "Location", "name": "<L>" },
       { "type": "Action", "name": "<A>" }
     ],
-    "text": [
-      "How many people are <A> at <L>",
-      "Can you count how many people are <A> at <L>",
-      "Give me the number of people that are <A> at <L>"
+    "questions": [
+      {
+        "text": "How many people are <A> at <L>"
+
+      },
+      {
+        "text": "Can you count how many people are <A> at <L>",
+      },
+      {
+        "text": "Give me the number of people that are <A> at <L>"
+      } 
     ],
     "nodes": [
-      { "type": "audio", "inputs": [] },
-      { "type": "image", "inputs": [] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_action", "inputs": [1], "side_inputs": ["<V>"] },
-
-      { "type": "count", "inputs": [1], "side_inputs": [] }
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<A>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["count"] }
     ],
-    "constraints": []
+    "functions_map": [
+      { "function": "filter_action", "name": "<A>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
-      { "type": "Vehicles", "name": "<V>" }
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicle_State", "name": "<VS>" }
     ],
-    "text": [
-      "How many <V> are illegally <VS> at <L>?",
-      "Are there <V> are illegally <VS> at <L>?If yes, how many?"
+    "questions": [
+      
+      {
+        "text": "How many <V> are illegally <VS> at <L>?"
+      },
+      {
+        "text": "Are there <V> are illegally <VS> at <L>?If yes, how many?"
+      },
+      {
+        "text": "Give me the number of <V> that are <VS> illegally at <L>?"
+      } 
     ],
     "nodes": [
-      { "type": "image", "inputs": [] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_vehicles", "inputs": [1], "side_inputs": ["<V>"] },
-      {
-        "type": "filter_<VS>_illegal",
-        "inputs": [2],
-        "side_inputs": ["<V>"]
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<V>", "<VS>"],
+        "inputs": [0] 
       },
-
-      { "type": "count", "inputs": [1], "side_inputs": [] }
+      { "inputs": [0, 1], "type": ["count"] }
     ],
-    "constraints": []
-  }
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicle_state", "name": "<VS>" }
+    ]  }
 ]
