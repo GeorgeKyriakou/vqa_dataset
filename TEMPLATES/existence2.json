@@ -1,0 +1,139 @@
+[
+  {
+    "params": [
+      {"type": "Noise Level", "name": "<NL>"}, 
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "questions":[ 
+      {
+        "text": "Is there <NL> noise level at <L>?"
+      },
+      {
+        "text": "Αt <L> ιs there <NL> noise level?"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<NL>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<NL>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      {"type": "Vehicles", "name": "<V>"},
+      {"type": "Vehicle_Movement_Type", "name": "<VMT>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "questions":[ 
+      {
+        "text": "Are there <V> <VMT> at <L>?"
+      },
+      {
+        "text": "Αt <L>, αre there <V> <VMT>?"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<VMT>", "<V>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<VMT>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicles", "name": "<V>" }
+
+    ]
+  },
+  {
+    "params": [
+      {"type": "Voice", "name": "<VO>"},
+      {"type": "Human", "name": "<H>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "questions":[ 
+      {
+        "text": "Is a <H> <VO> at <L>?"
+      },
+      {
+        "text": "Αt <L>, ιs there a <H> <VO>?"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<H>", "<VO>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<H>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicles", "name": "<VO>" }
+
+    ]
+  },
+  {
+    "params": [
+      {"type": "Disaster", "name": "<D>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "questions":[ 
+      {
+        "text": "Is there a <D> at <L>?"
+      },
+      {
+        "text": "Αt <L>, ιs there a <D>?"
+      },
+      {
+        "text": "In which <L> there is <D>"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<D>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<D>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      {"type": "Disaster", "name": "<D>"},
+      {"type": "Location ", "name": "<L>"}
+    ],
+    "questions":[ 
+      {
+        "text": "Is there a <D> at <L>?"
+      },
+      {
+        "text": "Αt <L>, ιs there a <D>?"
+      },
+      {
+        "text": "In which <L> there is <D>"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<D>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<D>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  }
+]

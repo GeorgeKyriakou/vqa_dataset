@@ -1,0 +1,32 @@
+[
+    {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicles", "name": "<V2>" },
+      { "type": "Vehicles", "name": "<V3>" }
+    ],
+    "questions":[ 
+      {
+        "text": "What is the majority of vehicles near <L>?<V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Between the following vehicles near <L>, which are most? <V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Are the more <V>, <V2> or <V3> near <L>?"
+      }  
+    ],
+    "nodes": [
+      { "inputs": [] , "type": "scene"},
+      { "side_inputs": ["<L>", "<V>", "<V2>", "<V3>"],
+        "inputs": [0] 
+      },
+      { "inputs": [0, 1], "type": ["existence"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
+  }
+]
