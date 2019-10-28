@@ -1,4 +1,8 @@
 const compare_tamplates = require("./TEMPLATES/compare_v2.json");
+const query_template = require("./TEMPLATES/query_v2.json");
+const count_template = require("./TEMPLATES/count.json");
+const existence_template = require("./TEMPLATES/existence.json");
+
 const metadata = require("./metadata.json");
 const { combineAll } = require("./helpers/combineAll.js");
 const { writeFile } = require("./helpers/writeToFile.js");
@@ -10,7 +14,7 @@ String.prototype.replaceAll = function(search, replacement) {
 
 const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
-compare_tamplates.forEach(template => {
+existence_template.forEach(template => {
   const answer = getAnswer(template.nodes, template.functions_map);
 
   template.questions.forEach(({ text }) => {

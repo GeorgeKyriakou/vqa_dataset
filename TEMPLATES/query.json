@@ -19,8 +19,7 @@
       { "type": "filter_trucks", "inputs": [1], "side_inputs": ["<V3>"] },
       { "type": "count", "inputs": [1], "side_inputs": [] },
       { "type": "compare", "inputs": [3] }
-    ],
-    "constraints": [{ "type": "OUT_NEQ", "params": ["<V2>", "<V3>"] }]
+    ]
   },
 
   {

@@ -1,0 +1,165 @@
+[
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicles", "name": "<V2>" },
+      { "type": "Vehicles", "name": "<V3>" }
+    ],
+    "questions": [
+      {
+        "text": "What is the majority of vehicles near <L>, <V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Between the following vehicles near <L>, which are most? <V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Are the more <V>, <V2> or <V3> near <L>?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V>"] },
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V2>"] },
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V3>"] },
+      { "inputs": [2, 3, 4, 5], "type": ["query_majority"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_vehicles", "name": "<V2>" },
+      { "function": "filter_vehicles", "name": "<V3>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "count", "name": "count" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicles", "name": "<V2>" },
+      { "type": "Vehicles", "name": "<V3>" }
+    ],
+    "questions": [
+      {
+        "text": "What type of vehicles is the least near <L>, <V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Between the following vehicles near <L>, which are the least? <V>, <V2> or <V3>?"
+      },
+      {
+        "text": "Are the less <V>, <V2> or <V3> than the rest near <L>?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V>", "count"] },
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V2>", "count"] },
+      { "inputs": [], "type": "scene" },
+      { "inputs": [1], "side_inputs": ["<L>", "<V3>", "count"] },
+      { "inputs": [2, 3, 4, 5], "type": ["query_minority"] }
+    ],
+    "functions_map": [
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_vehicles", "name": "<V2>" },
+      { "function": "filter_vehicles", "name": "<V3>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "count", "name": "count" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Vehicles", "name": "<V>" },
+      { "type": "Vehicles", "name": "<V2>" },
+      { "type": "Vehicles", "name": "<V3>" }
+    ],
+    "questions": [
+      {
+        "text": "What is the number plate of the <V> with the highest, over the speed limit, speed near <L>?"
+      },
+      {
+        "text": "If there are <V> travelling over the speed limit near <L>, what is the number plate of the one going the fastest?"
+      },
+      {
+        "text": "What is the number plate of the fastest <V>, exceeding the speed limit, near <L>?"
+      },
+      {
+        "text": "If there are <V> currently exceeding the speed limit near <L>, what is the number plate of the one going the fastest?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [0], "side_inputs": ["<L>", "<V>", "fastest"] },
+      { "inputs": [2], "type": ["get_license_plate"] }
+    ],
+    "functions_map": [
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "filter_vehicles", "name": "<V>" },
+      { "function": "filter_fastest", "name": "fastest" },
+      { "function": "query_max", "name": "max" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Disasters", "name": "<D>" },
+      { "type": "Emergency_vehicle", "name": "<EV>" }
+    ],
+    "questions": [
+      {
+        "text": "What is the distance of the nearest <EV> to the on going <D>?"
+      },
+      {
+        "text": "How close is the nearest <EV> to the on going <D>?"
+      },
+      {
+        "text": "How far is the nearest <EV> to the on going <D>?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
+      { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
+      { "inputs": [1, 3], "type": ["query_distance_min"] }
+    ],
+    "functions_map": [
+      { "function": "filter_emergency_vehicles", "name": "<EV>" },
+      { "function": "filter_emergency", "name": "<D>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "query_distance_min", "name": "query_distance_min" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Location", "name": "<L>" },
+      { "type": "Disasters", "name": "<D>" },
+      { "type": "Emergency_vehicle", "name": "<EV>" }
+    ],
+    "questions": [
+      {
+        "text": "What is the distance of the furthest <EV> to the on going <D>?"
+      },
+      {
+        "text": "How close is the furthest <EV> to the on going <D>?"
+      },
+      {
+        "text": "How far is the furthest <EV> to the on going <D>?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
+      { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
+      { "inputs": [1, 3], "type": ["query_distance_max"] }
+    ],
+    "functions_map": [
+      { "function": "filter_emergency_vehicles", "name": "<EV>" },
+      { "function": "filter_emergency", "name": "<D>" },
+      { "function": "filter_location", "name": "<L>" },
+      { "function": "query_distance_max", "name": "query_distance_max" }
+    ]
+  }
+]

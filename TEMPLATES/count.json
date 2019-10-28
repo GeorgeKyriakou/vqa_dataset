@@ -17,10 +17,8 @@
       }
     ],
     "nodes": [
-      { "inputs": [] , "type": "scene"},
-      { "side_inputs": ["<L>", "<V>", "<VS>"],
-        "inputs": [0] 
-      },
+      { "inputs": [], "type": "scene" },
+      { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
       { "inputs": [0, 1], "type": ["count"] }
     ],
     "functions_map": [
@@ -47,10 +45,8 @@
       }
     ],
     "nodes": [
-      { "inputs": [] , "type": "scene"},
-      { "side_inputs": ["<L>", "<V>", "<VS>"],
-        "inputs": [0] 
-      },
+      { "inputs": [], "type": "scene" },
+      { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
       { "inputs": [0, 1], "type": ["count"] }
     ],
     "functions_map": [
@@ -67,20 +63,17 @@
     "questions": [
       {
         "text": "How many people are <A> at <L>"
-
       },
       {
-        "text": "Can you count how many people are <A> at <L>",
+        "text": "Can you count how many people are <A> at <L>"
       },
       {
         "text": "Give me the number of people that are <A> at <L>"
-      } 
+      }
     ],
     "nodes": [
-      { "inputs": [] , "type": "scene"},
-      { "side_inputs": ["<L>", "<A>"],
-        "inputs": [0] 
-      },
+      { "inputs": [], "type": "scene" },
+      { "side_inputs": ["<L>", "<A>"], "inputs": [0] },
       { "inputs": [0, 1], "type": ["count"] }
     ],
     "functions_map": [
@@ -95,7 +88,6 @@
       { "type": "Vehicle_State", "name": "<VS>" }
     ],
     "questions": [
-      
       {
         "text": "How many <V> are illegally <VS> at <L>?"
       },
@@ -104,18 +96,17 @@
       },
       {
         "text": "Give me the number of <V> that are <VS> illegally at <L>?"
-      } 
+      }
     ],
     "nodes": [
-      { "inputs": [] , "type": "scene"},
-      { "side_inputs": ["<L>", "<V>", "<VS>"],
-        "inputs": [0] 
-      },
+      { "inputs": [], "type": "scene" },
+      { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
       { "inputs": [0, 1], "type": ["count"] }
     ],
     "functions_map": [
       { "function": "filter_vehicles", "name": "<V>" },
       { "function": "filter_location", "name": "<L>" },
       { "function": "filter_vehicle_state", "name": "<VS>" }
-    ]  }
+    ]
+  }
 ]

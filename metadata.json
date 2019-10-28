@@ -16,7 +16,7 @@
       "freezing"
     ],
     "Volume": ["silent", "quiet", "loud"],
-    "Lights": ["on", "off"],
+    "Lights_State": ["on", "off"],
     "Traffic_Lights": ["on", "off"],
     "Time": ["morning", "noon", "evening", "night"],
     "Weather": ["sunny", "rain", "snowey", "cloudy"],
@@ -24,11 +24,24 @@
     "Vehicles": ["car", "trucks", "motorbikes"],
     "Vehicle_Movement_Type": ["moving", "stopped"],
     "Vehicle_State": ["parked", "driving"],
-    "Noise Level": ["high", "medium", "low"],
-    "Human": ["man", "woman", "girl", "boy", "oldman", "oldwoman", "baby"],
-    "Disasters": ["flood", "fire"],
+    "Noise_Level": ["high", "medium", "low"],
+    "Human": ["man", "woman", "girl", "boy", "old man", "old woman", "baby"],
+    "Emergency_vehicle": ["fire truck", "ambulance", "police car"],
+    "Disasters": [
+      "flood",
+      "fire",
+      "earthquake",
+      "terrorist attack",
+      "multi-vehicle collision"
+    ],
     "Building": ["shop", "house"],
-    "Voice": ["shout", "mutter", "talk"],
+    "Action": [
+      "shoutting",
+      "muttering",
+      "talking",
+      "listening to music",
+      "reading"
+    ],
     "Distance": ["near", "far"],
     "MathCompare": ["equally", "less", "more"],
     "Position_absolute": [],
