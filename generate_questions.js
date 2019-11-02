@@ -8,42 +8,53 @@ const { combineAll } = require("./helpers/combineAll.js");
 const { writeFile } = require("./helpers/writeToFile.js");
 const { getAnswer } = require("./helpers/getAnswer");
 
-String.prototype.replaceAll = function(search, replacement) {
-  return this.split(search).join(replacement);
-};
+const templatesArray = [
+  compare_tamplates,
+  query_template,
+  count_template,
+  existence_template
+];
 
 const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
-existence_template.forEach(template => {
-  const answer = getAnswer(template.nodes, template.functions_map);
 
-  template.questions.forEach(({ text }) => {
-    const original = text;
-    regex = text.match(regexForVariable);
-    const paramTypeFromMetadata = regex.map(name => {
-      const p = template.params.find(p => p.name === name);
-      return p && metadata.types[p.type];
-    });
+templatesArray.forEach(t => {
+  t.forEach(template => {
+    const answer = getAnswer(template.nodes, template.functions_map);
 
-    const arrayOfWordCombinations = combineAll(...paramTypeFromMetadata);
+    template.questions.forEach(({ text }) => {
+      const original = text;
+      regex = text.match(regexForVariable);
+      const paramTypeFromMetadata = regex.map(name => {
+        const p = template.params.find(p => p.name === name);
+        return p && metadata.types[p.type];
+      });
 
-    arrayOfWordCombinations.forEach(wordCombination => {
-      const combinationOfUniqueWords = [...new Set(wordCombination)];
-      if (regex.length === combinationOfUniqueWords.length) {
-        let temp = text;
-        regex.forEach((variableByLetter, i) => {
-          temp = text.replace(variableByLetter, wordCombination[i]);
-          text = temp;
-        });
-        if (answer) {
-          sentenceArray.push(JSON.stringify({ text, answer }));
-        } else {
-          console.log("could not answer question :(");
+      const arrayOfWordCombinations = combineAll(...paramTypeFromMetadata);
+
+      arrayOfWordCombinations.forEach(wordCombination => {
+        const combinationOfUniqueWords = [...new Set(wordCombination)];
+        if (regex.length === combinationOfUniqueWords.length) {
+          let temp = text;
+          regex.forEach((variableByLetter, i) => {
+            temp = text.replace(variableByLetter, wordCombination[i]);
+            text = temp;
+          });
+          if (answer) {
+            sentenceArray.push(JSON.stringify({ text, answer }));
+          } else {
+            console.log("could not answer question :(");
+          }
+
+          text = original;
         }
-
-        text = original;
-      }
+      });
     });
   });
 });
+
 writeFile(sentenceArray);
+
+String.prototype.replaceAll = function(search, replacement) {
+  return this.split(search).join(replacement);
+};
