@@ -2,11 +2,18 @@ const compare_tamplates = require("./TEMPLATES/compare_v2.json");
 const query_template = require("./TEMPLATES/query_v2.json");
 const count_template = require("./TEMPLATES/count.json");
 const existence_template = require("./TEMPLATES/existence.json");
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
 const metadata = require("./metadata.json");
 const { combineAll } = require("./helpers/combineAll.js");
 const { writeFile } = require("./helpers/writeToFile.js");
 const { getAnswer } = require("./helpers/getAnswer");
+const { shuffle } = require("./helpers/shuffle.js");
 
 const templatesArray = [
   compare_tamplates,
@@ -53,7 +60,25 @@ templatesArray.forEach(t => {
   });
 });
 
-writeFile(sentenceArray);
+rl.question(
+  "Would you like to shuffle the generated questions [y/n]: ",
+  answer => {
+    switch (answer) {
+      case "y": {
+        console.log("Shuffling");
+        const shuffledArray = shuffle(sentenceArray);
+        writeFile(shuffledArray);
+        break;
+      }
+      default: {
+        console.log("Writting without shuffle");
+        writeFile(sentenceArray);
+        break;
+      }
+    }
+    rl.close();
+  }
+);
 
 String.prototype.replaceAll = function(search, replacement) {
   return this.split(search).join(replacement);
