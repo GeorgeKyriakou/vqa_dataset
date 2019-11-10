@@ -94,7 +94,6 @@ print(word2idx_outputs["compare_equal"])
 
 ''' Word embenddings '''
 
-
 embeddings_dictionary = dict()
 
 glove_file = open(r'glove.6B.100d.txt', encoding="utf8")
