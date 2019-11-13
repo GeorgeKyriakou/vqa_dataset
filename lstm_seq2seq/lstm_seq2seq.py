@@ -1,41 +1,26 @@
-import numpy as np
+from keras.models import Sequential
+from keras.layers.recurrent import LSTM
+from keras.layers.wrappers import TimeDistributed
+from keras.layers.core import Dense, RepeatVector
 
-import tensorflow as tf
+def build_model(input_size, max_out_seq_len, hidden_size):
 
-import collections
+    model = Sequential()
 
-from utils import *
+    # Encoder (first LSTM) model.add (LSTM (input_dim=input_size, output_dim=hidden_size, return_sequences=False)
 
-file_path = './conversation_data/'
 
-with open(file_path+'from.txt', 'r') as fopen:
+    model.add( Dense(hidden_size, activation="relu") )
 
-text_from = fopen.read().lower().split('\n')
+    # Use "RepeatVector" to copy N copies of Encoder's output (last time step) as Decoder's N inputs
+    model.add( RepeatVector(max_out_seq_len) )
 
-with open(file_path+'to.txt', 'r') as fopen:
+    # Decoder (second LSTM) 
+    model.add( LSTM(hidden_size, return_sequences=True) )
 
-text_to = fopen.read().lower().split('\n')
+    # TimeDistributed is to ensure consistency between Dense and Decoder
+    model.add( TimeDistributed(Dense(output_dim=input_size, activation="linear")) )
 
-print('len from: %d, len to: %d' % (len(text_from), len(text_to)))
+    model.compile(loss="mse", optimizer='adam')
 
-concat_from = ' '.join(text_from).split()
-
-vocabulary_size_from = len(list(set(concat_from)))
-
-data_from, count_from, dictionary_from, rev_dictionary_from = build_dataset(
-    concat_from, vocabulary_size_from)
-
-concat_to = ' '.join(text_to).split()
-
-vocabulary_size_to = len(list(set(concat_to)))
-
-data_to, count_to, dictionary_to, rev_dictionary_to = build_dataset(
-    concat_to, vocabulary_size_to)
-
-GO = dictionary_from['GO']
-
-PAD = dictionary_from['PAD']
-
-EOS = dictionary_from['EOS']
-
-UNK = dictionary_from['UNK']
+    return model

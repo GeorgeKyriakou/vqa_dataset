@@ -11,6 +11,8 @@ from keras.utils import to_categorical
 import numpy as np
 import matplotlib.pyplot as plt
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 BATCH_SIZE = 64
 EPOCHS = 20
 LSTM_NODES =256
@@ -32,7 +34,7 @@ for line in open(r'combination_questions.txt', encoding="utf-8"):
         break
 
     input_sentence = line.split('","ans', 1)[0].strip().split('":"', 1)[-1]
-    output = line.split('","answer":', 1)[-1].strip().split('}', 1)[0].replace('","', " ").replace('"', "").replace('[', "").replace(']', "")
+    output = line.split('","answer":', 1)[-1].strip().split('}', 1)[0].replace('","', " ").replace('"', "").replace('[', "").replace(']', "").replace('scene', "")
        
     output_sentence = output + ' <eos>'
     # print("The output is: ", output)
@@ -134,7 +136,7 @@ decoder_targets_one_hot = np.zeros((
 #     for t, word in enumerate(d):
 #         decoder_targets_one_hot[i, t, word] = 1
 
-# print(decoder_targets_one_hot.shape)
+print(decoder_targets_one_hot.shape)
 
 # encoder
 encoder_inputs_placeholder = Input(shape=(max_input_len,))
@@ -175,3 +177,60 @@ r = model.fit(
     epochs=EPOCHS,
     validation_split=0.1,
 )
+
+encoder_model = Model(encoder_inputs_placeholder, encoder_states)
+
+decoder_state_input_h = Input(shape=(LSTM_NODES,))
+decoder_state_input_c = Input(shape=(LSTM_NODES,))
+decoder_states_inputs = [decoder_state_input_h, decoder_state_input_c]
+
+decoder_inputs_single = Input(shape=(1,))
+decoder_inputs_single_x = decoder_embedding(decoder_inputs_single)
+
+decoder_outputs, h, c = decoder_lstm(decoder_inputs_single_x, initial_state=decoder_states_inputs)
+
+decoder_states = [h, c]
+decoder_outputs = decoder_dense(decoder_outputs)
+
+decoder_model = Model(
+    [decoder_inputs_single] + decoder_states_inputs,
+    [decoder_outputs] + decoder_states
+)
+
+plot_model(decoder_model, to_file='model_plot_dec.png', show_shapes=True, show_layer_names=True)
+
+
+idx2word_input = {v:k for k, v in word2idx_inputs.items()}
+idx2word_target = {v:k for k, v in word2idx_outputs.items()}
+
+def translate_sentence(input_seq):
+    states_value = encoder_model.predict(input_seq)
+    target_seq = np.zeros((1, 1))
+    target_seq[0, 0] = word2idx_outputs['<sos>']
+    eos = word2idx_outputs['<eos>']
+    output_sentence = []
+
+    for _ in range(max_out_len):
+        output_tokens, h, c = decoder_model.predict([target_seq] + states_value)
+        idx = np.argmax(output_tokens[0, 0, :])
+
+        if eos == idx:
+            break
+
+        word = ''
+
+        if idx > 0:
+            word = idx2word_target[idx]
+            output_sentence.append(word)
+
+        target_seq[0, 0] = idx
+        states_value = [h, c]
+
+    return ' '.join(output_sentence)
+
+i = np.random.choice(len(input_sentences))
+input_seq = encoder_input_sequences[i:i+1]
+translation = translate_sentence(input_seq)
+print('-')
+print('Input:', input_sentences[i])
+print('Response:', translation)
