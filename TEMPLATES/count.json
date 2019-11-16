@@ -19,7 +19,7 @@
     "nodes": [
       { "inputs": [], "type": "scene" },
       { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
-      { "inputs": [0, 1], "type": ["count"] }
+      { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
       { "function": "filter_vehicles", "name": "<V>" },
@@ -47,7 +47,7 @@
     "nodes": [
       { "inputs": [], "type": "scene" },
       { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
-      { "inputs": [0, 1], "type": ["count"] }
+      { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
       { "function": "filter_vehicles", "name": "<V>" },
@@ -74,7 +74,7 @@
     "nodes": [
       { "inputs": [], "type": "scene" },
       { "side_inputs": ["<L>", "<A>"], "inputs": [0] },
-      { "inputs": [0, 1], "type": ["count"] }
+      { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
       { "function": "filter_action", "name": "<A>" },
@@ -101,7 +101,7 @@
     "nodes": [
       { "inputs": [], "type": "scene" },
       { "side_inputs": ["<L>", "<V>", "<VS>"], "inputs": [0] },
-      { "inputs": [0, 1], "type": ["count"] }
+      { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
       { "function": "filter_vehicles", "name": "<V>" },
