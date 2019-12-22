@@ -32,17 +32,20 @@
       "fire",
       "earthquake",
       "terrorist attack",
-      "multi-vehicle collision"
+      "multi-vehicle collision",
+      "storm",
+      "hurricane"
     ],
-    "Building": ["shop", "house"],
+    "Building": ["shop", "house", "villa"],
     "Action": [
       "shoutting",
       "muttering",
       "talking",
       "listening to music",
-      "reading"
+      "reading",
+      "eating"
     ],
-    "Distance": ["near", "far"],
+    "Distance": ["near", "far", "close by"],
     "MathCompare": ["equally", "less", "more"],
     "Position_absolute": [],
     "Position_relative": ["inside", "outside"],
