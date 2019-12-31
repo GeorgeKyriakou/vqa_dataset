@@ -94,5 +94,26 @@
       { "function": "filter_lights", "name": "<LS>" },
       { "function": "filter_location", "name": "<L>" }
     ]
+  },
+  {
+    "params": [
+      { "type": "Action", "name": "<A>" },
+      { "type": "Location", "name": "<L>" }
+    ],
+    "questions": [
+      { "text": "Is there anyone <A> at <L>?" },
+      { "text": "Αt <L>, ιs there anyone <A>?" },
+      { "text": "Could i find anyone <A> at <L>, right now?" }
+    ],
+    "nodes": [
+      { "type": "scene", "inputs": [] },
+      { "inputs": [1], "side_inputs": ["<A>"] },
+      { "inputs": [1], "side_inputs": ["<L>"] },
+      { "type": "exists", "inputs": [1] }
+    ],
+    "functions_map": [
+      { "function": "filter_action", "name": "<A>" },
+      { "function": "filter_location", "name": "<L>" }
+    ]
   }
 ]
