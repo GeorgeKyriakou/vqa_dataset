@@ -15,8 +15,8 @@
       { "type": "existence", "inputs": [1, 2] }
     ],
     "functions_map": [
-      { "function": "filter_sound_level", "name": "<NL>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterSoundLevel", "name": "<NL>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   },
 
@@ -38,9 +38,9 @@
       { "type": "exists", "inputs": [1] }
     ],
     "functions_map": [
-      { "function": "filter_human", "name": "<H>" },
-      { "function": "filter_action", "name": "<A>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterHuman", "name": "<H>" },
+      { "function": "filterAction", "name": "<A>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   },
   {
@@ -67,9 +67,9 @@
       { "type": "existence", "inputs": [1, 2, 3] }
     ],
     "functions_map": [
-      { "function": "filter_vehicle_movement_type", "name": "<MT>" },
-      { "function": "filter_vehicle", "name": "<V>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterVehicleMovementType", "name": "<MT>" },
+      { "function": "filterVehicle", "name": "<V>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   },
   {
@@ -91,8 +91,8 @@
       { "type": "existence", "inputs": [1, 2] }
     ],
     "functions_map": [
-      { "function": "filter_lights", "name": "<LS>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterLights", "name": "<LS>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   },
   {
@@ -112,8 +112,8 @@
       { "type": "exists", "inputs": [1] }
     ],
     "functions_map": [
-      { "function": "filter_action", "name": "<A>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterAction", "name": "<A>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   }
 ]

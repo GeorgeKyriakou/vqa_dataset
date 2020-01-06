@@ -3,7 +3,7 @@
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Vehicles", "name": "<V>" },
-      { "type": "Vehicle_State", "name": "<VS>" }
+      { "type": "VehicleState", "name": "<VS>" }
     ],
     "questions": [
       {
@@ -22,16 +22,16 @@
       { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "filter_vehicle_state", "name": "<VS>" }
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "filterVehicleState", "name": "<VS>" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Vehicles", "name": "<V>" },
-      { "type": "Vehicle_State", "name": "<VS>" }
+      { "type": "VehicleState", "name": "<VS>" }
     ],
     "questions": [
       {
@@ -50,9 +50,9 @@
       { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "filter_vehicle_state", "name": "<VS>" }
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "filterVehicleState", "name": "<VS>" }
     ]
   },
   {
@@ -77,15 +77,15 @@
       { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
-      { "function": "filter_action", "name": "<A>" },
-      { "function": "filter_location", "name": "<L>" }
+      { "function": "filterAction", "name": "<A>" },
+      { "function": "filterLocation", "name": "<L>" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Vehicles", "name": "<V>" },
-      { "type": "Vehicle_State", "name": "<VS>" }
+      { "type": "VehicleState", "name": "<VS>" }
     ],
     "questions": [
       {
@@ -104,9 +104,9 @@
       { "inputs": [0, 1], "type": "count" }
     ],
     "functions_map": [
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "filter_vehicle_state", "name": "<VS>" }
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "filterVehicleState", "name": "<VS>" }
     ]
   }
 ]

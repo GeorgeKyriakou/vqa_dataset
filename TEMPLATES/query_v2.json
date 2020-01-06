@@ -33,10 +33,10 @@
       { "inputs": [2, 3, 4, 5], "type": "query_majority" }
     ],
     "functions_map": [
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_vehicles", "name": "<V2>" },
-      { "function": "filter_vehicles", "name": "<V3>" },
-      { "function": "filter_location", "name": "<L>" },
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterVehicles", "name": "<V2>" },
+      { "function": "filterVehicles", "name": "<V3>" },
+      { "function": "filterLocation", "name": "<L>" },
       { "function": "count", "name": "count" }
     ]
   },
@@ -68,10 +68,10 @@
       { "inputs": [2, 3, 4, 5], "type": "query_minority" }
     ],
     "functions_map": [
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_vehicles", "name": "<V2>" },
-      { "function": "filter_vehicles", "name": "<V3>" },
-      { "function": "filter_location", "name": "<L>" },
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterVehicles", "name": "<V2>" },
+      { "function": "filterVehicles", "name": "<V3>" },
+      { "function": "filterLocation", "name": "<L>" },
       { "function": "count", "name": "count" }
     ]
   },
@@ -102,17 +102,17 @@
       { "inputs": [2], "type": "get_license_plate" }
     ],
     "functions_map": [
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "filter_vehicles", "name": "<V>" },
-      { "function": "filter_fastest", "name": "fastest" },
-      { "function": "query_max", "name": "max" }
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "filterVehicles", "name": "<V>" },
+      { "function": "filterFastest", "name": "fastest" },
+      { "function": "queryMax", "name": "max" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Disasters", "name": "<D>" },
-      { "type": "Emergency_vehicle", "name": "<EV>" }
+      { "type": "EmergencyVehicle", "name": "<EV>" }
     ],
     "questions": [
       {
@@ -129,20 +129,20 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "query_distance_min" }
+      { "inputs": [1, 3], "type": "queryDistanceMin" }
     ],
     "functions_map": [
-      { "function": "filter_emergency_vehicles", "name": "<EV>" },
-      { "function": "filter_emergency", "name": "<D>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "query_distance_min", "name": "query_distance_min" }
+      { "function": "filterEmergencyVehicles", "name": "<EV>" },
+      { "function": "filterEmergency", "name": "<D>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "queryDistanceMin", "name": "queryDistanceMin" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Disasters", "name": "<D>" },
-      { "type": "Emergency_vehicle", "name": "<EV>" }
+      { "type": "EmergencyVehicle", "name": "<EV>" }
     ],
     "questions": [
       {
@@ -159,20 +159,20 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "query_distance_max" }
+      { "inputs": [1, 3], "type": "queryDistanceMax" }
     ],
     "functions_map": [
-      { "function": "filter_emergency_vehicles", "name": "<EV>" },
-      { "function": "filter_emergency", "name": "<D>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "query_distance_max", "name": "query_distance_max" }
+      { "function": "filterEmergencyVehicles", "name": "<EV>" },
+      { "function": "filterEmergency", "name": "<D>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "queryDistanceMax", "name": "queryDistanceMax" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Disasters", "name": "<D>" },
-      { "type": "Emergency_vehicle", "name": "<EV>" }
+      { "type": "EmergencyVehicle", "name": "<EV>" }
     ],
     "questions": [
       {
@@ -186,20 +186,20 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "query_location" }
+      { "inputs": [1, 3], "type": "queryLocation" }
     ],
     "functions_map": [
-      { "function": "filter_emergency_vehicles", "name": "<EV>" },
-      { "function": "filter_emergency", "name": "<D>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "query_location", "name": "query_location" }
+      { "function": "filterEmergencyVehicles", "name": "<EV>" },
+      { "function": "filterEmergency", "name": "<D>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "queryLocation", "name": "queryLocation" }
     ]
   },
   {
     "params": [
       { "type": "Location", "name": "<L>" },
       { "type": "Disasters", "name": "<D>" },
-      { "type": "Emergency_vehicle", "name": "<EV>" }
+      { "type": "EmergencyVehicle", "name": "<EV>" }
     ],
     "questions": [
       {
@@ -219,13 +219,13 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "query_location" }
+      { "inputs": [1, 3], "type": "queryLocation" }
     ],
     "functions_map": [
-      { "function": "filter_emergency_vehicles", "name": "<EV>" },
-      { "function": "filter_emergency", "name": "<D>" },
-      { "function": "filter_location", "name": "<L>" },
-      { "function": "query_location", "name": "query_location" }
+      { "function": "filterEmergencyVehicles", "name": "<EV>" },
+      { "function": "filterEmergency", "name": "<D>" },
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "queryLocation", "name": "queryLocation" }
     ]
   }
 ]

@@ -13,10 +13,10 @@
     ],
     "nodes": [
       { "type": "image", "inputs": [] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_cars", "inputs": [1], "side_inputs": ["<V>"] },
-      { "type": "filter_bike", "inputs": [1], "side_inputs": ["<V2>"] },
-      { "type": "filter_trucks", "inputs": [1], "side_inputs": ["<V3>"] },
+      { "type": "filterLocation", "inputs": [1], "side_inputs": ["<L>"] },
+      { "type": "filterCars", "inputs": [1], "side_inputs": ["<V>"] },
+      { "type": "filterBike", "inputs": [1], "side_inputs": ["<V2>"] },
+      { "type": "filterTrucks", "inputs": [1], "side_inputs": ["<V3>"] },
       { "type": "count", "inputs": [1], "side_inputs": [] },
       { "type": "compare", "inputs": [3] }
     ]
@@ -33,8 +33,8 @@
     ],
     "nodes": [
       { "type": "image", "inputs": [] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_vehicles", "inputs": [1], "side_inputs": ["<V>"] },
+      { "type": "filterLocation", "inputs": [1], "side_inputs": ["<L>"] },
+      { "type": "filterVehicles", "inputs": [1], "side_inputs": ["<V>"] },
 
       { "type": "count", "inputs": [1], "side_inputs": [] },
       { "type": "compare", "inputs": [3] }
@@ -53,10 +53,10 @@
     ],
     "nodes": [
       { "type": "image", "inputs": [] },
-      { "type": "filter_events", "inputs": [1], "side_inputs": ["<E>"] },
-      { "type": "filter_location", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_events", "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "filter_vehicles", "inputs": [1], "side_inputs": ["<V>"] },
+      { "type": "filterEvents", "inputs": [1], "side_inputs": ["<E>"] },
+      { "type": "filterLocation", "inputs": [1], "side_inputs": ["<L>"] },
+      { "type": "filterEvents", "inputs": [1], "side_inputs": ["<L>"] },
+      { "type": "filterVehicles", "inputs": [1], "side_inputs": ["<V>"] },
 
       { "type": "count", "inputs": [1], "side_inputs": [] },
       { "type": "compare", "inputs": [3] }
