@@ -48,7 +48,7 @@ templatesArray.forEach(t => {
             text = temp;
           });
           if (answer) {
-            sentenceArray.push(JSON.stringify({ text, answer }));
+            sentenceArray.push(JSON.stringify(`${text} ${answer}`));
           } else {
             console.log("could not answer question :(");
           }
