@@ -9,7 +9,7 @@
       { "text": "Αt <L> ιs the level of noise <NL>?" }
     ],
     "nodes": [
-      { "type": "audio", "inputs": [] },
+      { "type": "scene", "inputs": [] },
       { "inputs": [0], "side_inputs": ["<NL>"] },
       { "inputs": [1], "side_inputs": ["<L>"] },
       { "type": "existence", "inputs": [1, 2] }
@@ -113,6 +113,30 @@
     ],
     "functions_map": [
       { "function": "filterAction", "name": "<A>" },
+      { "function": "filterLocation", "name": "<L>" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "Math", "name": "<M>" },
+      { "type": "Location", "name": "<L>" }
+    ],
+    "questions": [
+      { "text": "Is there a <M> concentration of people at <L>?" },
+      { "text": "Is there a <M> gathering of people at <L>?" },
+      { "text": "If I go at <L>, will I find a <M> concentration of people?" },
+      { "text": "If I go at <L>, will I find a <M> gathering of people?" },
+      { "text": "Could i find a <M> gethering of people at <L> right now?" },
+      { "text": "Could i find a <M> concentration of people at <L> right now?" }
+    ],
+    "nodes": [
+      { "type": "scene", "inputs": [] },
+      { "inputs": [1], "side_inputs": ["<L>"] },
+      { "inputs": [1], "side_inputs": ["<M>"] },
+      { "type": "exists", "inputs": [1] }
+    ],
+    "functions_map": [
+      { "function": "countPeople", "name": "<M>" },
       { "function": "filterLocation", "name": "<L>" }
     ]
   }

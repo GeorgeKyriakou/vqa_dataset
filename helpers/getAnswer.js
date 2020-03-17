@@ -21,6 +21,8 @@ module.exports.getAnswer = (nodes, functions_map) => {
     });
     return answer.trim();
   } catch (e) {
+    console.error(e);
+    
     throw new Error("FUCK!");
   }
 };

@@ -48,11 +48,11 @@ templatesArray.forEach(t => {
             text = temp;
           });
           if (answer) {
-            sentenceArray.push(JSON.stringify(`${text} ${answer}`));
+            // Go.	Πάμε.	CC-BY 2.0 (France) Attribution: tatoeba.org #2877272 (CM) & #1307862 (enteka)
+            sentenceArray.push(`\t${text} \t${answer} \n`);
           } else {
             console.log("could not answer question :(");
           }
-
           text = original;
         }
       });

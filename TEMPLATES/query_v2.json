@@ -30,7 +30,7 @@
       { "inputs": [1], "side_inputs": ["<L>", "<V2>"] },
       { "inputs": [], "type": "scene" },
       { "inputs": [1], "side_inputs": ["<L>", "<V3>"] },
-      { "inputs": [2, 3, 4, 5], "type": "query_majority" }
+      { "inputs": [2, 3, 4, 5], "type": "queryMajority" }
     ],
     "functions_map": [
       { "function": "filterVehicles", "name": "<V>" },
@@ -65,7 +65,7 @@
       { "inputs": [1], "side_inputs": ["<L>", "<V2>", "count"] },
       { "inputs": [], "type": "scene" },
       { "inputs": [1], "side_inputs": ["<L>", "<V3>", "count"] },
-      { "inputs": [2, 3, 4, 5], "type": "query_minority" }
+      { "inputs": [2, 3, 4, 5], "type": "queryMinority" }
     ],
     "functions_map": [
       { "function": "filterVehicles", "name": "<V>" },
@@ -225,6 +225,33 @@
       { "function": "filterEmergencyVehicles", "name": "<EV>" },
       { "function": "filterEmergency", "name": "<D>" },
       { "function": "filterLocation", "name": "<L>" },
+      { "function": "queryLocation", "name": "queryLocation" }
+    ]
+  },
+  {
+    "params": [
+      { "type": "MathMinMaxes", "name": "<MinMax>" },
+      { "type": "EmergencyVehicle", "name": "<EV>" }
+    ],
+    "questions": [
+      {
+        "text": "Where is <MinMax> concentration of people currently?"
+      },
+      {
+        "text": "Where would I find <MinMax> concentration people in town?"
+      },
+      {
+        "text": "If I search in town, where can I find <MinMax> concentration people?"
+      }
+    ],
+    "nodes": [
+      { "inputs": [], "type": "scene" },
+      { "inputs": [0], "side_inputs": ["<L>", "<MinMax>"] },
+      { "inputs": [1, 2], "type": "queryLocation" }
+    ],
+    "functions_map": [
+      { "function": "filterLocation", "name": "<L>" },
+      { "function": "count", "name": "<MinMax>" },
       { "function": "queryLocation", "name": "queryLocation" }
     ]
   }

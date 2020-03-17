@@ -34,28 +34,37 @@
       "terrorist attack",
       "multi-vehicle collision",
       "storm",
-      "hurricane"
+      "hurricane",
+      "murder"
     ],
-    "Building": ["shop", "house", "villa"],
     "Action": [
       "shoutting",
       "muttering",
       "talking",
       "listening to music",
       "reading",
-      "eating"
+      "eating",
+      "riding their bicycle",
+      "dancing",
+      "chatting"
     ],
     "Distance": ["near", "far", "close by"],
     "MathCompare": ["equally", "less", "more"],
+    "Math": ["big", "large", "dense", "small", "low", "thin"],
+    "MathMinMaxes": ["the most", "the least", "the biggest", "the smallest"],
     "Position_absolute": [],
-    "Position_relative": ["inside", "outside"],
+    "Position_relative": ["inside", "outside", "next to", "across", "opposite of"],
     "Location": [
       "malmö university",
       "central train station",
       "shopping mall",
       "malmö stadium",
       "city center",
-      "folkets park"
+      "folkets park",
+      "suburbs",
+      "park",
+      "city hall",
+      "old town"
     ]
   },
   "functions": [

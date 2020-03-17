@@ -199,7 +199,7 @@
         "side_inputs": ["<L>", "<T>"],
         "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "aprox_equal_integer" }
+      { "inputs": [1, 3], "type": "aproxEqualInteger" }
     ],
 
     "functions_map": [

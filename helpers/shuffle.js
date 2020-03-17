@@ -1,7 +1,18 @@
-module.exports.shuffle = a => {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+/**
+ * Fischer-Yates shuffling algorithm
+ * @link https://bost.ocks.org/mike/shuffle/
+ * @param array Array of items
+ * @returns Shuffled array 
+ */
+
+module.exports.shuffle =(array) => {
+  var m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    t = array[m];
+    array[m] = array[i];
+    array[i] = t;
   }
-  return a;
-};
+
+  return array;
+}
