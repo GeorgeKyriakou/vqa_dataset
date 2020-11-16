@@ -12,7 +12,7 @@
       { "type": "scene", "inputs": [] },
       { "inputs": [0], "side_inputs": ["<NL>"] },
       { "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "existence", "inputs": [1, 2] }
+      { "type": "exists", "inputs": [1, 2] }
     ],
     "functions_map": [
       { "function": "filterSoundLevel", "name": "<NL>" },
@@ -35,7 +35,7 @@
       { "inputs": [1], "side_inputs": ["<H>"] },
       { "inputs": [1], "side_inputs": ["<A>"] },
       { "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "exists", "inputs": [1] }
+      { "type": "exists", "inputs": [1,2] }
     ],
     "functions_map": [
       { "function": "filterHuman", "name": "<H>" },
@@ -64,7 +64,7 @@
         "inputs": [2],
         "side_inputs": ["<MT>"]
       },
-      { "type": "existence", "inputs": [1, 2, 3] }
+      { "type": "exists", "inputs": [1, 2, 3] }
     ],
     "functions_map": [
       { "function": "filterVehicleMovementType", "name": "<MT>" },
@@ -88,7 +88,7 @@
         "side_inputs": ["<LS>"]
       },
       { "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "existence", "inputs": [1, 2] }
+      { "type": "exists", "inputs": [1, 2] }
     ],
     "functions_map": [
       { "function": "filterLights", "name": "<LS>" },
@@ -109,7 +109,7 @@
       { "type": "scene", "inputs": [] },
       { "inputs": [1], "side_inputs": ["<A>"] },
       { "inputs": [1], "side_inputs": ["<L>"] },
-      { "type": "exists", "inputs": [1] }
+      { "type": "exists", "inputs": [1,2] }
     ],
     "functions_map": [
       { "function": "filterAction", "name": "<A>" },
@@ -133,7 +133,7 @@
       { "type": "scene", "inputs": [] },
       { "inputs": [1], "side_inputs": ["<L>"] },
       { "inputs": [1], "side_inputs": ["<M>"] },
-      { "type": "exists", "inputs": [1] }
+      { "type": "exists", "inputs": [1,2] }
     ],
     "functions_map": [
       { "function": "countPeople", "name": "<M>" },

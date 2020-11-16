@@ -16,7 +16,7 @@
         "text": "Is it as <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "Given the location <L>, is it as <T> <PR> compared to <PR1>?"
+        "text": "With the <L> as a point of reference, is it as <T> <PR> the location compared to <PR1> of it?"
       },
       {
         "text": "At <L>, is it equally <T> <PR> compared to <PR1>?"
@@ -43,7 +43,7 @@
         "side_inputs": ["<L>", "<T>"],
         "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "compareEqual" }
+      { "inputs": [1, 3], "type": "compare" }
     ],
 
     "functions_map": [
@@ -62,13 +62,13 @@
     ],
     "questions": [
       {
-        "text": "Is it less <T> <PR> <L> compared to <PR1>?"
+        "text": "Is it less <T> <PR> the <L> compared to <PR1>?"
       },
       {
-        "text": "Is it less <T> <PR> <L> than <PR1>?"
+        "text": "Is it less <T> <PR> the <L> than <PR1>?"
       },
       {
-        "text": "Given the location <L>, is it less <T> <PR> compared to <PR1>?"
+        "text": "With the <L> as a point of reference, is it less <T> <PR> compared to <PR1> of it?"
       },
       {
         "text": "At <L>, is it less <T> <PR> compared to <PR1>?"
@@ -95,7 +95,7 @@
         "side_inputs": ["<L>", "<T>"],
         "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "compareLower" }
+      { "inputs": [1, 3], "type": "compare" }
     ],
 
     "functions_map": [
@@ -120,7 +120,7 @@
         "text": "Is it more <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "Given the location <L>, is it more <T> <PR> compared to <PR1>?"
+        "text": "With the <L> as a point of reference, is it more <T> <PR> compared to <PR1> of it?"
       },
       {
         "text": "At <L>, is it more <T> <PR> compared to <PR1>?"
@@ -130,9 +130,6 @@
       },
       {
         "text": "Is it more <T> <PR> compared to <PR1> at <L>?"
-      },
-      {
-        "text": "Is it more <T> <PR> and <PR1> at <L>?"
       }
     ],
 
@@ -147,7 +144,7 @@
         "side_inputs": ["<L>", "<T>"],
         "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "compareLower" }
+      { "inputs": [1, 3], "type": "compare" }
     ],
 
     "functions_map": [
@@ -172,7 +169,7 @@
         "text": "Is it approximately as <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "Given the location <L>, is it approximately as <T> <PR> compared to <PR1>?"
+        "text": "With the <L> as a point of reference, is it approximately as <T> <PR> compared to <PR1> of it?"
       },
       {
         "text": "At <L>, is it approximately equally <T> <PR> compared to <PR1>?"
@@ -199,7 +196,7 @@
         "side_inputs": ["<L>", "<T>"],
         "inputs": [0]
       },
-      { "inputs": [1, 3], "type": "aproxEqualInteger" }
+      { "inputs": [1, 3], "type": "compare" }
     ],
 
     "functions_map": [

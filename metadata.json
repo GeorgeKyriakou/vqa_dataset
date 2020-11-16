@@ -53,7 +53,7 @@
     "Math": ["big", "large", "dense", "small", "low", "thin"],
     "MathMinMaxes": ["the most", "the least", "the biggest", "the smallest"],
     "Position_absolute": [],
-    "Position_relative": ["inside", "outside", "next to", "across", "opposite of"],
+    "Position_relative": ["inside", "outside", "beside", "opposite", "next"],
     "Location": [
       "malmö university",
       "central train station",
@@ -61,7 +61,6 @@
       "malmö stadium",
       "city center",
       "folkets park",
-      "suburbs",
       "park",
       "city hall",
       "old town"

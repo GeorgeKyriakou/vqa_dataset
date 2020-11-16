@@ -24,9 +24,9 @@ const templatesArray = [
 
 const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
-
+let answersOnly = [];
 templatesArray.forEach(t => {
-  t.forEach(template => {
+  t.forEach(template => {    
     const answer = getAnswer(template.nodes, template.functions_map);
 
     template.questions.forEach(({ text }) => {
@@ -49,7 +49,8 @@ templatesArray.forEach(t => {
           });
           if (answer) {
             // Go.	Πάμε.	CC-BY 2.0 (France) Attribution: tatoeba.org #2877272 (CM) & #1307862 (enteka)
-            sentenceArray.push(`\t${text} \t${answer} \n`);
+            sentenceArray.push(`${text} \t${answer}`);
+            answersOnly.push(answer)
           } else {
             console.log("could not answer question :(");
           }
@@ -67,12 +68,12 @@ rl.question(
       case "y": {
         console.log("Shuffling");
         const shuffledArray = shuffle(sentenceArray);
-        writeFile(shuffledArray);
+        writeFile(shuffledArray, answersOnly);
         break;
       }
       default: {
         console.log("Writting without shuffle");
-        writeFile(sentenceArray);
+        writeFile(sentenceArray, answersOnly);
         break;
       }
     }

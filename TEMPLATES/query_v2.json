@@ -20,7 +20,7 @@
         "text": "Would i find more <V>, <V2> or <V3> near <L>, right now?"
       },
       {
-        "text": "Counting vehicles right now near <L>, are there more <V>, <V2> or <V3>?"
+        "text": "Counting vehicles right now near <L>, are there more <V>, <V2> or <V3>?" 
       }
     ],
     "nodes": [
@@ -30,14 +30,14 @@
       { "inputs": [1], "side_inputs": ["<L>", "<V2>"] },
       { "inputs": [], "type": "scene" },
       { "inputs": [1], "side_inputs": ["<L>", "<V3>"] },
-      { "inputs": [2, 3, 4, 5], "type": "queryMajority" }
+      { "inputs": [2, 3, 4, 5], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterVehicles", "name": "<V>" },
       { "function": "filterVehicles", "name": "<V2>" },
       { "function": "filterVehicles", "name": "<V3>" },
       { "function": "filterLocation", "name": "<L>" },
-      { "function": "count", "name": "count" }
+      { "function": "queryMax", "name": "max" }
     ]
   },
   {
@@ -60,19 +60,19 @@
     ],
     "nodes": [
       { "inputs": [], "type": "scene" },
-      { "inputs": [1], "side_inputs": ["<L>", "<V>", "count"] },
+      { "inputs": [1], "side_inputs": ["<L>", "<V>"] },
       { "inputs": [], "type": "scene" },
-      { "inputs": [1], "side_inputs": ["<L>", "<V2>", "count"] },
+      { "inputs": [1], "side_inputs": ["<L>", "<V2>"] },
       { "inputs": [], "type": "scene" },
-      { "inputs": [1], "side_inputs": ["<L>", "<V3>", "count"] },
-      { "inputs": [2, 3, 4, 5], "type": "queryMinority" }
+      { "inputs": [1], "side_inputs": ["<L>", "<V3>"] },
+      { "inputs": [2, 3, 4, 5], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterVehicles", "name": "<V>" },
       { "function": "filterVehicles", "name": "<V2>" },
       { "function": "filterVehicles", "name": "<V3>" },
       { "function": "filterLocation", "name": "<L>" },
-      { "function": "count", "name": "count" }
+      { "function": "queryMin", "name": "min" }
     ]
   },
   {
@@ -98,8 +98,8 @@
     ],
     "nodes": [
       { "inputs": [], "type": "scene" },
-      { "inputs": [0], "side_inputs": ["<L>", "<V>", "fastest"] },
-      { "inputs": [2], "type": "get_license_plate" }
+      { "inputs": [0], "side_inputs": ["<L>", "<V>"] },
+      { "inputs": [1,2], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterLocation", "name": "<L>" },
@@ -129,7 +129,7 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "queryDistanceMin" }
+      { "inputs": [1, 3], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterEmergencyVehicles", "name": "<EV>" },
@@ -159,7 +159,7 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "queryDistanceMax" }
+      { "inputs": [1, 3], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterEmergencyVehicles", "name": "<EV>" },
@@ -186,7 +186,7 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "queryLocation" }
+      { "inputs": [1, 3], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterEmergencyVehicles", "name": "<EV>" },
@@ -219,7 +219,7 @@
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<D>", "<L>"] },
       { "inputs": [], "side_inputs": ["<EV>", "<L>"] },
-      { "inputs": [1, 3], "type": "queryLocation" }
+      { "inputs": [1, 3], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterEmergencyVehicles", "name": "<EV>" },
@@ -247,7 +247,7 @@
     "nodes": [
       { "inputs": [], "type": "scene" },
       { "inputs": [0], "side_inputs": ["<L>", "<MinMax>"] },
-      { "inputs": [1, 2], "type": "queryLocation" }
+      { "inputs": [1, 2], "type": "query" }
     ],
     "functions_map": [
       { "function": "filterLocation", "name": "<L>" },
