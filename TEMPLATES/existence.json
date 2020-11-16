@@ -28,7 +28,7 @@
     ],
     "questions": [
       { "text": "Is there any <H> <A> at <L>?" },
-      { "text": "Αt <L>, ιs there any <H> <A>?" }
+      { "text": "Αt <L> ιs there any <H> <A>?" }
     ],
     "nodes": [
       { "type": "scene", "inputs": [] },
@@ -51,7 +51,7 @@
     ],
     "questions": [
       { "text": "Is there a <MT> <V> at <L>?" },
-      { "text": "Αt <L>, is there any <MT> <V>?" }
+      { "text": "Αt <L> is there any <MT> <V>?" }
     ],
     "nodes": [
       { "type": "scene", "inputs": [] },
@@ -79,7 +79,7 @@
     ],
     "questions": [
       { "text": "Are the lights <LS> at <L>?" },
-      { "text": "Αt <L>, are the lights <LS>?" }
+      { "text": "Αt <L> are the lights <LS>?" }
     ],
     "nodes": [
       { "type": "scene", "inputs": [] },
@@ -102,8 +102,8 @@
     ],
     "questions": [
       { "text": "Is there anyone <A> at <L>?" },
-      { "text": "Αt <L>, ιs there anyone <A>?" },
-      { "text": "Could i find anyone <A> at <L>, right now?" }
+      { "text": "Αt <L> ιs there anyone <A>?" },
+      { "text": "Could i find anyone <A> at <L> right now?" }
     ],
     "nodes": [
       { "type": "scene", "inputs": [] },
@@ -124,8 +124,8 @@
     "questions": [
       { "text": "Is there a <M> concentration of people at <L>?" },
       { "text": "Is there a <M> gathering of people at <L>?" },
-      { "text": "If I go at <L>, will I find a <M> concentration of people?" },
-      { "text": "If I go at <L>, will I find a <M> gathering of people?" },
+      { "text": "If I go at <L> will I find a <M> concentration of people?" },
+      { "text": "If I go at <L> will I find a <M> gathering of people?" },
       { "text": "Could i find a <M> gethering of people at <L> right now?" },
       { "text": "Could i find a <M> concentration of people at <L> right now?" }
     ],

@@ -8,19 +8,19 @@
     ],
     "questions": [
       {
-        "text": "What is the majority of vehicles near <L>, <V>, <V2> or <V3>?"
+        "text": "What is the majority of vehicles near <L> <V> <V2> or <V3>?"
       },
       {
-        "text": "Between the following vehicles near <L>, which are most? <V>, <V2> or <V3>?"
+        "text": "Between the following vehicles near <L> which are most? <V> <V2> or <V3>?"
       },
       {
-        "text": "Are the more <V>, <V2> or <V3> near <L>?"
+        "text": "Are the more <V> <V2> or <V3> near <L>?"
       },
       {
-        "text": "Would i find more <V>, <V2> or <V3> near <L>, right now?"
+        "text": "Would i find more <V> <V2> or <V3> near <L> right now?"
       },
       {
-        "text": "Counting vehicles right now near <L>, are there more <V>, <V2> or <V3>?" 
+        "text": "Counting vehicles right now near <L> are there more <V> <V2> or <V3>?" 
       }
     ],
     "nodes": [
@@ -49,13 +49,13 @@
     ],
     "questions": [
       {
-        "text": "What type of vehicles is the least near <L>, <V>, <V2> or <V3>?"
+        "text": "What type of vehicles is the least near <L> <V> <V2> or <V3>?"
       },
       {
-        "text": "Between the following vehicles near <L>, which are the least? <V>, <V2> or <V3>?"
+        "text": "Between the following vehicles near <L> which are the least? <V> <V2> or <V3>?"
       },
       {
-        "text": "Are the less <V>, <V2> or <V3> than the rest near <L>?"
+        "text": "Are the less <V> <V2> or <V3> than the rest near <L>?"
       }
     ],
     "nodes": [
@@ -84,16 +84,16 @@
     ],
     "questions": [
       {
-        "text": "What is the number plate of the <V> with the highest, over the speed limit, speed near <L>?"
+        "text": "What is the number plate of the <V> with the highest over the speed limit speed near <L>?"
       },
       {
-        "text": "If there are <V> travelling over the speed limit near <L>, what is the number plate of the one going the fastest?"
+        "text": "If there are <V> travelling over the speed limit near <L> what is the number plate of the one going the fastest?"
       },
       {
-        "text": "What is the number plate of the fastest <V>, exceeding the speed limit, near <L>?"
+        "text": "What is the number plate of the fastest <V> exceeding the speed limit near <L>?"
       },
       {
-        "text": "If there are <V> currently exceeding the speed limit near <L>, what is the number plate of the one going the fastest?"
+        "text": "If there are <V> currently exceeding the speed limit near <L> what is the number plate of the one going the fastest?"
       }
     ],
     "nodes": [
@@ -179,7 +179,7 @@
         "text": "Where would i find the furthest <EV> to the on going <D>?"
       },
       {
-        "text": "Relative to the on going <D>, where would i find the furthest <EV> ?"
+        "text": "Relative to the on going <D> where would i find the furthest <EV> ?"
       }
     ],
     "nodes": [
@@ -206,13 +206,13 @@
         "text": "Where would i find the closest <EV> to the on going <D>?"
       },
       {
-        "text": "Relative to the on going <D>, where would i find the closest <EV> ?"
+        "text": "Relative to the on going <D> where would i find the closest <EV> ?"
       },
       {
         "text": "Where would i find the nearest <EV> to the on going <D>?"
       },
       {
-        "text": "Relative to the on going <D>, where would i find the nearest <EV> ?"
+        "text": "Relative to the on going <D> where would i find the nearest <EV> ?"
       }
     ],
     "nodes": [
@@ -241,7 +241,7 @@
         "text": "Where would I find <MinMax> concentration people in town?"
       },
       {
-        "text": "If I search in town, where can I find <MinMax> concentration people?"
+        "text": "If I search in town where can I find <MinMax> concentration people?"
       }
     ],
     "nodes": [

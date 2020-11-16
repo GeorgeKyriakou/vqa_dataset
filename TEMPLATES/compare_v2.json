@@ -16,13 +16,13 @@
         "text": "Is it as <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "With the <L> as a point of reference, is it as <T> <PR> the location compared to <PR1> of it?"
+        "text": "With the <L> as a point of reference is it as <T> <PR> the location compared to <PR1> of it?"
       },
       {
-        "text": "At <L>, is it equally <T> <PR> compared to <PR1>?"
+        "text": "At <L> is it equally <T> <PR> compared to <PR1>?"
       },
       {
-        "text": "At <L>, is it equally <T> <PR> and <PR1>?"
+        "text": "At <L> is it equally <T> <PR> and <PR1>?"
       },
       {
         "text": "Is it equally <T> <PR> compared to <PR1> at <L>?"
@@ -68,13 +68,13 @@
         "text": "Is it less <T> <PR> the <L> than <PR1>?"
       },
       {
-        "text": "With the <L> as a point of reference, is it less <T> <PR> compared to <PR1> of it?"
+        "text": "With the <L> as a point of reference is it less <T> <PR> compared to <PR1> of it?"
       },
       {
-        "text": "At <L>, is it less <T> <PR> compared to <PR1>?"
+        "text": "At <L> is it less <T> <PR> compared to <PR1>?"
       },
       {
-        "text": "At <L>, which is less <T>, <PR> or <PR1>?"
+        "text": "At <L> which is less <T> <PR> or <PR1>?"
       },
       {
         "text": "Is it less <T> <PR> compared to <PR1> at <L>?"
@@ -120,13 +120,13 @@
         "text": "Is it more <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "With the <L> as a point of reference, is it more <T> <PR> compared to <PR1> of it?"
+        "text": "With the <L> as a point of reference is it more <T> <PR> compared to <PR1> of it?"
       },
       {
-        "text": "At <L>, is it more <T> <PR> compared to <PR1>?"
+        "text": "At <L> is it more <T> <PR> compared to <PR1>?"
       },
       {
-        "text": "At <L>, which is more <T>, <PR> or <PR1>?"
+        "text": "At <L> which is more <T> <PR> or <PR1>?"
       },
       {
         "text": "Is it more <T> <PR> compared to <PR1> at <L>?"
@@ -169,13 +169,13 @@
         "text": "Is it approximately as <T> <PR> <L> than <PR1>?"
       },
       {
-        "text": "With the <L> as a point of reference, is it approximately as <T> <PR> compared to <PR1> of it?"
+        "text": "With the <L> as a point of reference is it approximately as <T> <PR> compared to <PR1> of it?"
       },
       {
-        "text": "At <L>, is it approximately equally <T> <PR> compared to <PR1>?"
+        "text": "At <L> is it approximately equally <T> <PR> compared to <PR1>?"
       },
       {
-        "text": "At <L>, is it approximately equally <T> <PR> and <PR1>?"
+        "text": "At <L> is it approximately equally <T> <PR> and <PR1>?"
       },
       {
         "text": "Is it approximately equally <T> <PR> compared to <PR1> at <L>?"
