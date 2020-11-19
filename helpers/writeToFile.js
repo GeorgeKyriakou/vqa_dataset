@@ -1,5 +1,5 @@
 const fs = require("fs");
-module.exports.writeFile = (sentenceArray, answersOnly) => {
+module.exports.writeFile = (sentenceArray) => {
   const file = fs.createWriteStream(
     `./generated_questions/combination_questions.txt`
   );
@@ -13,7 +13,6 @@ module.exports.writeFile = (sentenceArray, answersOnly) => {
     );
     console.log(
       "Total number of unique answers",
-      [...new Set(answersOnly)].length
     );
   });
   sentenceArray.forEach((v) => {

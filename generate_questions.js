@@ -6,7 +6,7 @@ const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 const metadata = require("./metadata.json");
@@ -16,30 +16,51 @@ const { getAnswer } = require("./helpers/getAnswer");
 const { shuffle } = require("./helpers/shuffle.js");
 
 const templatesArray = [
-  compare_tamplates,
-  query_template,
-  count_template,
-  existence_template
+  compare_tamplates, //38880
+  query_template, //840
+  count_template, //729
+  existence_template, //1899
 ];
 
 const regexForVariable = /\<(.*?)\>/gm;
 let sentenceArray = [];
-let answersOnly = [];
-templatesArray.forEach(t => {
-  t.forEach(template => {    
+let shortestQuestionLength = 100;
+let longestQuestionlength = 0;
+let shortQuestionCount = 0; //25961
+let averageQuestionCount = 0; //13931
+let largeQuestionCount = 0; //2456
+
+const updateStatistics = (text) => {
+  const l = text.split(" ").length;
+  if (l < shortestQuestionLength) {
+    shortestQuestionLength = l;
+  }
+  if (l > longestQuestionlength) {
+    longestQuestionlength = l;
+  }
+  if (l <= 12) {
+    shortQuestionCount++;
+  } else if (l > 12 && l <= 18) {
+    averageQuestionCount++;
+  } else {
+    largeQuestionCount++;
+  }
+};
+templatesArray.forEach((t) => {
+  t.forEach((template) => {
     const answer = getAnswer(template.nodes, template.functions_map);
 
     template.questions.forEach(({ text }) => {
       const original = text;
       regex = text.match(regexForVariable);
-      const paramTypeFromMetadata = regex.map(name => {
-        const p = template.params.find(p => p.name === name);
+      const paramTypeFromMetadata = regex.map((name) => {
+        const p = template.params.find((p) => p.name === name);
         return p && metadata.types[p.type];
       });
 
       const arrayOfWordCombinations = combineAll(...paramTypeFromMetadata);
 
-      arrayOfWordCombinations.forEach(wordCombination => {
+      arrayOfWordCombinations.forEach((wordCombination) => {
         const combinationOfUniqueWords = [...new Set(wordCombination)];
         if (regex.length === combinationOfUniqueWords.length) {
           let temp = text;
@@ -48,9 +69,8 @@ templatesArray.forEach(t => {
             text = temp;
           });
           if (answer) {
-            // Go.	Πάμε.	CC-BY 2.0 (France) Attribution: tatoeba.org #2877272 (CM) & #1307862 (enteka)
             sentenceArray.push(`${text} \t${answer}`);
-            answersOnly.push(answer)
+            updateStatistics(text);
           } else {
             console.log("could not answer question :(");
           }
@@ -63,17 +83,42 @@ templatesArray.forEach(t => {
 
 rl.question(
   "Would you like to shuffle the generated questions [y/n]: ",
-  answer => {
+  (answer) => {
+    console.log(
+      `shortest question overall inside the dataset is of ${shortestQuestionLength} words`
+    );
+    console.log(
+      `longest question overall inside the dataset is of ${longestQuestionlength} words`
+    );
+    console.log(
+      `shortQuestionCount: ${shortQuestionCount} (${(
+        (shortQuestionCount / 42348) *
+        100
+      ).toFixed(2)}%)`
+    );
+    console.log(
+      `averageQuestionCount: ${averageQuestionCount} (${(
+        (averageQuestionCount / 42348) *
+        100
+      ).toFixed(2)}%)`
+    );
+    console.log(
+      `largeQuestionCount: ${largeQuestionCount} (${(
+        (largeQuestionCount / 42348) *
+        100
+      ).toFixed(2)}%)`
+    );
+
     switch (answer) {
       case "y": {
         console.log("Shuffling");
         const shuffledArray = shuffle(sentenceArray);
-        writeFile(shuffledArray, answersOnly);
+        writeFile(shuffledArray);
         break;
       }
       default: {
         console.log("Writting without shuffle");
-        writeFile(sentenceArray, answersOnly);
+        writeFile(sentenceArray);
         break;
       }
     }
@@ -81,6 +126,6 @@ rl.question(
   }
 );
 
-String.prototype.replaceAll = function(search, replacement) {
+String.prototype.replaceAll = function (search, replacement) {
   return this.split(search).join(replacement);
 };
